@@ -84,8 +84,8 @@ body{background-color: #153d77; font-family: Pretendard, sans-serif; font-size: 
 }
 
 /* divContents */
-#divContents{width: calc(100% - 79px); padding: 86px 20px 18px; margin-left: auto; transition: width 0.5s; box-sizing: border-box;background-color: #f6f7fa;}
-#divWrapper.onsnb #divContents{width: calc(100% - 263px); transition: width .5s;}
+#divContents{width: calc(100% - 79px); height: 100%; padding: 68px 0px 68px 20px; margin-left: auto; transition: width 0.5s; box-sizing: border-box;background-color: #f6f7fa; position: relative; overflow: hidden;}
+#divWrapper.onsnb #divContents{width: calc(100% - 263px);  transition: width .5s;}
 #divWrapper.onsnb #divContent .contentTop{left: 263px;}
 @media screen and (max-width : 1300px){
     #divWrapper.onsnb #divContents{width: calc(100% - 220px);}
@@ -93,7 +93,7 @@ body{background-color: #153d77; font-family: Pretendard, sans-serif; font-size: 
 }
 
 /* divContent */
-#divContent{width: 100%; min-height: calc(100vh - 142px); background-color: #f6f7fa; margin-left: auto; box-sizing: border-box; padding-bottom: 23px;}
+#divContent{width: 100%; min-height: calc((var(--vh, 1vh) * 100) - 136px); overflow-y: auto; background-color: #f6f7fa; margin-left: auto; box-sizing: border-box; padding: 20px 20px 0 0;}
 #divContent .contentTop{height: 68px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background: #fff; border-bottom: 1px solid #f6f7fa; padding: 0 20px; position: fixed; left: 79px; top: 0; right: 0;  box-sizing: border-box; z-index: 4; transition: left .5s;}
 #divContent .contentTop .left{display: -webkit-box; display: -ms-flexbox; display: flex;}
 #divContent .contentTop .right{display: -webkit-box; display: -ms-flexbox; display: flex;}
@@ -121,9 +121,9 @@ body{background-color: #153d77; font-family: Pretendard, sans-serif; font-size: 
 #divContent .logoutBtn img{image-rendering: -webkit-optimize-contrast; width: 17px;}
 #divContent .logoutBtn img.dark{display: none;}
 @media screen and (max-width : 1024px){
-    #divContents{padding: 86px 15px 18px;}
+    #divContents{padding: 68px 0 68px 15px;}
+    #divContent{padding: 20px 15px 0 0;}
     #divContent .contentTop{padding: 0 15px;}
-    
 }
 
 
@@ -162,7 +162,7 @@ body{background-color: #153d77; font-family: Pretendard, sans-serif; font-size: 
 .alarmPopupW .closeBtn .dark{display: none;}
 
 /* divFooter */
-#divFooter{padding: 0 15px; box-sizing: border-box; color: #809fb8;}
+#divFooter{position: absolute; left: 0; bottom: 0; width: 100%; padding: 15px; box-sizing: border-box; color: #809fb8; background: #f6f7fa;}
 #divFooter p{font-size: 13px;}
 
 
@@ -232,7 +232,7 @@ html[data-dark=true] .alarmPopupW .alarmList .messageW{background-color: rgba(23
 html[data-dark=true] .alarmPopupW .alarmList .messageW .deleteBtn{color: #fefefe; background-image: url(../../images/delete_dark.png);}
 html[data-dark=true] .alarmPopupW .moreBtn{color: #fefefe;}
 
-html[data-dark=true] #divFooter{color: rgba(255,255,255,0.7);}
+html[data-dark=true] #divFooter{color: rgba(255,255,255,0.7); background: #000;}
 
 
 #btn_logout{display: inline-block;
