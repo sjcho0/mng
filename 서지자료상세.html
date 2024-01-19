@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--  -->
+<title>서지자료목록상세</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+	<link rel="shortcut icon" href="images/favicon/favicon.ico">
+	<link type="text/css" rel="stylesheet" href="style/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="style/css/common.css">
+ 	<link type="text/css" rel="stylesheet" href="style/css/plugin/jquery.stickytable.css">
+    <link type="text/css" rel="stylesheet" href="style/css/content.css">
+    <link type="text/css" rel="stylesheet" href="style/css/layout.css">
+    <link type="text/css" rel="stylesheet" href="style/css/grid.css">
+    <link type="text/css" rel="stylesheet" href="style/css/plugin/jquery.mCustomScrollbar.css">
+    <link type="text/css" rel="stylesheet" href="style/css/error.css">
+	<link rel="stylesheet" href="jqgrid/css/ui.jqgrid.min.css">
+	<link rel="stylesheet" href="jquery-ui-1.13.0.base/jquery-ui.min.css">
+	<script src="js/plugin/jquery-3.6.3.min.js"></script>
+    <script src="js/plugin/jquery.dotdotdot.js"></script>
+    <script src="js/plugin/jquery.mCustomScrollbar.min.js"></script>
+    <script src="js/plugin/jquery-ui-1.13.0.custom/jquery-ui-1.13.0.custom/jquery-ui.min.js"></script>
+    <script src="js/plugin/jquery.stickytable.js"></script>
+    <script src="js/plugin/datepicker-ko.js"></script>
+    <script src="js/plugin/jquery.preloaders.min.js"></script>
+    <script src="js/jquery.serializeObject.min.js"></script>
+    <script src="jqgrid/i18n/grid.locale-kr.js"></script>
+    <script src="jqgrid/jquery.jqgrid.min.js"></script>
+    <script src="js/common.js"></script>
+
+</head>
+<body>
+   <style>
+.chkLibCode{
+		display: none;
+}
+.cbox{
+	border: 1px solid #d9e1e7;
+}
+ .ui-widget-content {
+   background-color:#ffffff;
+   /* background-color:transparent; */
+ }
+
+.excelpopup{display:none}
+.progressPopup{display:none}
+</style>
+<script src="js/plugin/popup.js"></script>
+<script src="js/plugin/loading-bar.js"></script>
+<script src="js/common.js"></script>
+
+<form name="frmPop" id='frmPop'>
+	<input type='hidden' id='abbrIds' name='abbrId'>
+	<input type='hidden' id='rowNum' name='rowNum' value="1">
+</form>
+<form name="frmAccsPop" id='frmAccsPop'>
+	<input type='hidden' id='accsId' name='accsId'>
+	<input type='hidden' id='aRowNum' name='rowNum'>
+</form>
+	 <div class="popupType2" style="display: block;">
+		<div class="popupTop">
+			<h3 class="popupTit">서지 정보</h3>
+		</div>
+		<div class="popupCont2 Scroll1">
+			<div class="flex mobileFlex">
+                <div class="ls wdp40 mgr20">
+					<ul class='btnList'>
+						<li><input type='button' name='prevBtn' id='prevBtn' class='btnType4' value='이전'></li>
+						<li><input type='button' name='nextBtn' id='nextBtn' class='btnType4' value='다음'></li>
+					</ul>
+					<div class="borderBox2">
+						<form id="updateCommand" name="updateCommand" action="/book/BookData/detailBookData.do?abbrId=AB-014358357&amp;rowNum=1" method="post" onsubmit="return false;"><input type="hidden" id='abbrIdSeq' name='abbrIdSeq' value="AB-014358357">
+							<input type='hidden' id='accsIds' name='accsId'>
+							<table class="tableType3 tablefix">
+								<tr>
+									<th>고유번호</th>
+									<td>
+										<input id="abbrId" name="abbrId" title="고유번호" type="text" class="inputtextType1 wdp100" readonly="readonly" value="AB-014358357"/></td>
+									<th>로컬제어번호</th>
+									<td>
+										<input id="lcControlNo" name="lcControlNo" title="로컬제어번호" type="text" class="inputtextType1 wdp100" value="7087636"/></td>
+								</tr>
+								<tr>
+									<th>도서명</th>
+									<td colspan="3"/>
+										<input id="title" name="title" title="도서명" type="text" class="inputtextType1 wdp100" value="봄의 생물, 어디에 있을까?"/></td>
+									</tr>
+								<tr>
+									<th>저자명</th>
+									<td colspan="3"/>
+										<input id="author" name="author" title="저자명" type="text" class="inputtextType1 wdp100" value="가타노 다카시 사진;초록큰나무 옮김"/></td>
+								</tr>
+								<tr>
+									<th>출판사</th>
+									<td colspan="3"/>
+										<input id="publisher" name="publisher" title="출판사" type="text" class="inputtextType1 wdp100" value="지혜의 정원,"/></td>
+								</tr>
+								<tr>
+									<th>출판연도</th>
+									<td colspan="3"/>
+										<input id="publisherYear" name="publisherYear" title="출판연도" type="text" class="inputtextType1 wdp100" value="2009"/></td>
+								</tr>
+								<tr>
+									<th>청구기호</th>
+									<td colspan="3">
+										<input id="callNo" name="callNo" title="청구기호" type="text" class="inputtextType1 wdp100" value="유408-ㄷ99ㅈ-29=2"/></td>
+								</tr>
+								<tr>
+									<th>분류기호</th>
+									<td>
+										<input id="classNo" name="classNo" title="분류기호" type="text" class="inputtextType1 wdp100" value="408"/></td>
+									<th>저자기호</th>
+									<td>
+										<input id="authorNo" name="authorNo" title="저자기호" type="text" class="inputtextType1 wdp100" value="ㄷ99ㅈ"/></td>
+								</tr>
+								<tr>
+									<th>ISBN</th>
+									<td>
+										<input id="isbn" name="isbn" title="ISBN" type="text" class="inputtextType1 wdp100" value=""/></td>
+									<th>ISBN SET</th>
+									<td>
+										<input id="isbnSet" name="isbnSet" title="ISBNSET" type="text" class="inputtextType1 wdp100" value=""/></td>
+								</tr>
+								<tr>
+									<th>형태사항</th>
+									<td colspan="3">
+										<input id="physicalDesc" name="physicalDesc" title="형태사항" type="text" class="inputtextType1 wdp100" value=""/></td>
+								</tr>
+								<tr>
+									<th>형식구분</th>
+									<td>
+										<select id="formCode" name="formCode" title="형식구분" class="selectType2"><option value="" disabled="disabled">형식구분</option><option value="">적용안함</option><option value="BK" selected="selected">BK:도서</option><option value="AM">AM:필사자료</option><option value="CF">CF:전자자료</option><option value="CR">CR:계속자료</option><option value="ER">ER:전자자료</option><option value="MP">MP:지도자료</option><option value="MU">MU:음악/녹음자료</option><option value="MX">MX:복합자료</option><option value="RB">RB:고서</option><option value="SE">SE:연속간행물</option><option value="VM">VM:시청각자료</option></select></td>
+									<th>매체구분</th>
+									<td>
+										<input id="mediaCode" name="mediaCode" title="매체구분" type="text" class="inputtextType1 wdp100" value="PR"/></td>
+								</tr>
+								<tr>
+									<th>자료구분</th>
+									<td>
+										<select id="matCode" name="matCode" title="자료구분" class="selectType2"><option value="" disabled="disabled">자료구분</option><option value="">적용안함</option><option value="GM" selected="selected">GM:일반자료</option><option value="CP">CP:회의자료</option><option value="DM">DM:석사학위논문</option><option value="DP">DP:박사학위논문</option><option value="HA">HA:교과서</option><option value="HR">HR:학습서</option><option value="JO">JO:학술지</option><option value="MA">MA:잡지</option><option value="NB">NB:비도서자료</option><option value="NP">NP:신문</option><option value="PB">PB:팝업북</option><option value="RB">RB:고서</option><option value="RP">RP:보고서</option><option value="SM">SM:교지</option><option value="ZZ">ZZ:기타(도자기..)</option></select></td>
+									<th>이용제한</th>
+									<td>
+										<select id="useLimitCode" name="useLimitCode" title="이용제한" class="selectType2"><option value="" disabled="disabled">이용제한</option><option value=" ">적용안함</option><option value="GM" selected="selected">GM:일반</option><option value="CA">CA:특수</option><option value="CD">CD:열람제한</option><option value="CL">CL:사서제한</option><option value="IZ">IZ:귀중자료</option></select></td>
+								</tr>
+								<tr>
+									<th>점/묵자</th>
+									<td colspan="3">
+										<input id="brailleType" name="brailleType" title="점/묵자" type="text" class="inputtextType1 wdp100" value=""/></td>
+								<tr>
+									<th>검색 키워드</th>
+									<td colspan="3">
+										<input id="searchKeyword" name="searchKeyword" title="검색키워드" type="text" class="inputtextType1 wdp100" value=""/></td>
+								</tr>
+								<tr>
+									<th>내첫도 도서관</th>
+									<td colspan="3">
+										141069 141099 141137 141258 141521 141536</td>
+								</tr>
+								<tr>
+									<th>내첫도 지역</th>
+									<td colspan="3">
+										안산  성남  남양주  </td>
+								</tr>
+								<tr>
+									<th>두루두루 도서관</th>
+									<td colspan="3">
+										141069 141099 141137 141258 141521 141536</td>
+								</tr>
+								<tr>
+									<th>두루두루 지역</th>
+									<td colspan="3">
+										안산  성남  남양주  </td>
+								</tr>
+								<tr>
+									<th>소장 도서관</th>
+									<td colspan="3">
+										141166 141137 141099 141536 141069 141258 141521</td>
+								</tr>
+								<tr>
+									<th>AGENT 그룹</th>
+									<td colspan="3">
+										0500 0200 1700 2700</td>
+								</tr>
+								<tr>
+									<th>등록자</th>
+									<td>구축시스템</td>
+									<th>등록일</th>
+									<td>2023.02.02</td>
+								</tr>
+								<tr>
+									<th>수정자</th>
+									<td></td>
+									<th>수정일</th>
+									<td>2023.11.23</td>
+								</tr>
+							</table>
+						<div>
+<input type="hidden" name="_csrf" value="241cba01-728c-4d07-96a4-d9941f8ba8a1" />
+</div></form></div>
+				</div>
+				<div class="rs wdp60">
+					<h4 class="titleType2">소장자료 목록</h4>
+		    		<ul class='btnList'>
+		    			 <li><a name="btnDetail" id="btnDetail" class="btnType3" href="#" title="상세보기">상세보기</a></li>
+		    			 <li><a name="btnSearch" id="btnSearch" class="btnType3" href="#" title="조회">조회</a></li>
+		    			 <li><a name="btnCancel" id="btnCancel" class="btnType3" href="#" title="취소">취소</a></li>
+						 <li><a name="btnAdd" id="btnAdd" class="btnType3" href="#" title="등록">등록</a></li>
+						 <li><a name="btnDelete"  id="btnDelete" class="btnType3" href="#" title="삭제">삭제</a></li>
+						 <li><a name="btnExcel"	 id="btnExcel" class="btnType3"  href="#" title="엑셀출력">엑셀출력</a></li>
+				     </ul>
+					<div class="tableW">
+			    		<!-- Grid -->
+						<table id="grid"></table>
+						<div id="pager"></div>
+						<!-- //Grid -->
+			    	</div>
+		    	</div>
+			</div>
+		</div>
+		<div class="popupFooter">
+			<ul class='btnList2'>
+				<li><a id="createBtn" class="btnType1" href="#" title="등록">저장</a></li>
+				<li><a id="deleteBtn" class="btnType1" href="#" title="삭제">삭제</a></li>		                
+				<li><a id="cancelBtn"class="btnType1" href="#" title="닫기">닫기</a></li>
+			</ul>   
+		</div>
+	</div>
+    <div class="popupW">
+	  <style>
+
+.excelpopup{display:none}
+.progressPopup{display:none}
+
+</style>
+<div id="divPopup">
+		<div class="blackBg" ></div>
+		<div class="popupType1 wdp20 popup excelpopup">
+			<div class="popupTop">
+				<h3 class="popupTit">엑셀출력</h3>
+			</div>
+			<div class="popupCont2 Scroll1 mht500">
+				<div class="borderBox2">
+					<div id="exDiv1">
+						<input type="checkbox" id="pchk1_1" name="pExcel" value="C"><label
+							for="pchk1_1"><span class="chkbox"></span>선택항목</label>
+					</div>
+					<div id="exDiv2">
+						<input type="checkbox" id="pchk1_2" name="pExcel" value="A"><label
+							for="pchk1_2"><span class="chkbox"></span>검색목록전체</label>
+					</div>
+				</div>
+				<ul class="btnList2">
+					<li><a class="btnType5 okbtn" href="#" title="선택">선택</a></li>
+					<li><a class="btnType5 cancelbtn" href="#" title="닫기">닫기</a></li>
+				</ul>
+			</div>
+			<a class="closeBtn" href="#" title="팝업 닫기"><img class="light"
+				src="images/close.png" alt="닫기 light"><img class="dark"
+				src="images/close_dark.png" alt="닫기 dark"></a>
+		</div>
+
+		<div class="popupType1 popup wdp20  logoutPopup">
+			<div class="popupTop">
+				<h3 class="popupTit">로그아웃 알림</h3>
+			</div>
+			<div class="popupCont2 Scroll1 mht500 alignC ">
+				<div class="borderBox2 ht35 pdt10">
+					<span id="ncounter"></span> 초 후 자동 로그아웃 됩니다. <br>
+				</div>
+				<ul class="btnList2">
+					<li><a class="btnType5 extendBtn" href="#" title="연장하기">연장하기</a></li>
+					<li><a class="btnType5 sLogoutBtn" href="#" title="로그아웃">로그아웃</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- 	<div class="popupType1 ldPop wdp20 popup progressPopup">
+		<div class="blackBg" style="display: block;"></div>
+		<div class="popupType1" style="display: block;">
+				<div class="popupbox">
+					<div class="popupCont">
+						<p class="message"></p>
+					</div>
+					<div class="ldBarW" style="width:100%">
+							<div id="prog1" style="width:100%"></div>
+					</div>
+				</div>
+		</div>
+	</div> -->
+<!-- </div> -->
+<div class="ldPop popup  progressPopup" style="display:none;">
+	<div class="popupbox">
+		<div class="popupCont">
+			<p class="message"></p>
+		</div>
+		<div class="ldBarW" style="width:100%">
+				<div id="prog1" style="width:100%"></div>
+			</div>
+	</div>
+</div>
+
+<div class="alarmPopupW popupType1">
+                    <div class="popupTop">
+                        <h3 class="popupTit"><span class="state"></span>알림</h3>
+                    </div>
+                    <div class="popupCont mht450">
+                            <ul class="alarmList">
+                            </ul>
+                    </div>
+                    <a class="closeBtn" href="#" title="팝업 닫기"><img class="light" src="images/close.png" alt="라이트모드로고"><img class="dark" src="images/close_dark.png" alt="다크모드로고"></a>
+                </div>
+</div> 
+</body>
+</html>

@@ -1,0 +1,20 @@
+/*grid ë°˜ì‘í˜•*/  
+.ui-jqgrid{max-width:100%!important;width:auto!important}
+.ui-jqgrid-view,.ui-jqgrid-hdiv,.ui-jqgrid-bdiv,.ui-jqgrid-pager{width:auto!important}
+
+/** text elipse ì²˜ë¦¬*/
+.ui-jqgrid tr.jqgrow td{text-overflow:ellipsis;-o-text-overflow:ellipsis}
+.ui-jqgrid tr.jqfoot>td,.ui-jqgrid tr.jqgroup>td,.ui-jqgrid tr.jqgrow>td{padding:0 4px 0 4px}
+.ui-jqgrid .ui-jqgrid-labels>.ui-th-column>.ui-jqgrid-resize{width:.6em}
+.ui-jqgrid .ui-jqgrid-labels th.ui-th-column{border-bottom:1px solid #ddd}
+.ui-jqgrid .ui-jqgrid-btable{table-layout:fixed;margin:0;outline-style:none;height:0}
+.ui-jqgrid .ui-pg-table .ui-pg-selbox{display:block;padding:1px;appearance:auto}
+#load_grid{border:1px solid #003eff;background:#f9fcff;font-weight:400;color:#141414}
+
+.ui-jqgrid-jquery-ui.ui-widget.ui-widget-content.ui-corner-all.ui-jqgrid {
+    /* border-radius: 12px; */
+}
+
+.ui-jqgrid-view {
+    border-radius: 11px;
+}    

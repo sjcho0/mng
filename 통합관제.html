@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--  -->
+<title>경기도 종합목록 관리시스템 관제</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+	<link rel="shortcut icon" href="images/favicon/favicon.ico">
+	<link type="text/css" rel="stylesheet" href="style/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="style/css/common.css">
+ 	<link type="text/css" rel="stylesheet" href="style/css/plugin/jquery.stickytable.css">
+    <link type="text/css" rel="stylesheet" href="style/css/content.css">
+    <link type="text/css" rel="stylesheet" href="style/css/layout.css">
+    <link type="text/css" rel="stylesheet" href="style/css/grid.css">
+    <link type="text/css" rel="stylesheet" href="style/css/plugin/jquery.mCustomScrollbar.css">
+    <link type="text/css" rel="stylesheet" href="style/css/error.css">
+	<link rel="stylesheet" href="jqgrid/css/ui.jqgrid.min.css">
+	<link rel="stylesheet" href="jquery-ui-1.13.0.base/jquery-ui.min.css">
+	<script src="js/plugin/jquery-3.6.3.min.js"></script>
+    <script src="js/plugin/jquery.dotdotdot.js"></script>
+    <script src="js/plugin/jquery.mCustomScrollbar.min.js"></script>
+    <script src="js/plugin/jquery-ui-1.13.0.custom/jquery-ui-1.13.0.custom/jquery-ui.min.js"></script>
+    <script src="js/plugin/jquery.stickytable.js"></script>
+    <script src="js/plugin/datepicker-ko.js"></script>
+    <script src="js/plugin/jquery.preloaders.min.js"></script>
+    <script src="js/jquery.serializeObject.min.js"></script>
+    <script src="jqgrid/i18n/grid.locale-kr.js"></script>
+    <script src="jqgrid/jquery.jqgrid.min.js"></script>
+    <script src="js/common.js"></script>
+
+</head>
+<body>
+   <link type="text/css" rel="stylesheet" href="style/css/popup.css">
+    <script src="js/echarts.min.js"></script>
+
+
+	<div class="mainDetailPopup">
+
+    	<div class="popupHeader">
+        	<h1 class="logo"><img class="light" src="images/logo.png" alt="라이트모드로고"><img class="dark" src="images/logo_dark.png" alt="다크모드로고"></h1>
+        </div>
+        <div class="popupContent2">
+            <div class="sections sections1">
+            	<ul class="chartList2">
+                	<li class="chartlist1">
+                    	
+                        <div class="textW">
+                            <p class="title">등록건수</p>
+                            <p>전&nbsp;&nbsp;&nbsp;&nbsp;일 : <span>0</span></p>
+                            <p>전전일 : <span>0</span></p>
+                        </div>
+                    </li>
+                    <li class="chartlist2">
+                        
+                        <div class="textW">
+                            <p class="title">대출건수</p>
+                            <p>전&nbsp;&nbsp;&nbsp;&nbsp;일 : <span>0</span></p>
+                            <p>전전일 : <span>0</span></p>
+                        </div>
+                    </li>
+                    <li class="chartlist3">
+                       
+                        <div class="textW">
+                            <p class="title">반납건수</p>
+                            <p>전&nbsp;&nbsp;&nbsp;&nbsp;일 : <span>0</span></p>
+                            <p>전전일 : <span>0</span></p>
+                        </div>
+                    </li>
+                    <li class="chartlist4">
+                       
+                        <div class="textW">
+                            <p class="title">예약건수</p>
+                            <p>전&nbsp;&nbsp;&nbsp;&nbsp;일 : <span>0</span></p>
+                            <p>전전일 : <span>0</span></p>
+                        </div>
+                    </li>
+                    <li class="chartlist5">
+                       
+                        <div class="textW">
+                            <p class="title">제적건수</p>
+                            <p>전&nbsp;&nbsp;&nbsp;&nbsp;일 : <span>0</span></p>
+							<p>전전일 : <span>0</span></p>
+                        </div>
+                    </li>
+                </ul>
+                </div>
+                <div class="sections sections2 borderBox">
+                    <div class="boxTop">
+                        <div class="btl">
+                            <h3 class="titleType1">지역별 현황</h3>
+                        </div>
+                    </div>
+                    <div class="boxCont alignC">
+                        <ul class="legend">
+                            <li><span class="palette colorBg4"></span>정상작동</li>
+                            <li><span class="palette colorBg5"></span>이상작동</li>
+                        </ul>
+                        <div class="areaMap">
+                            <img src="images/mapOnly.png" alt="경기도이미지">
+                            <div class="areaList">
+                            	<a id="yeoncheon" name="areaState" class="area yeoncheon">
+                                	<span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">연천군</span>
+                                    <input type="hidden" name="agentGropCode" value="2300">
+                                </a>
+                                <a id="pocheon" name="areaState" class="area pocheon">
+                                	<span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">포천시</span>
+                                    <input type="hidden" name="agentGropCode" value="2100">
+                                </a>
+                                <a id="dongducheon" name="areaState" class="area dongducheon">
+                                	<span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">동두천시</span>
+                                    <input type="hidden" name="agentGropCode" value="2200">
+                                </a>
+                                <a id="yangju" name="areaState" class="area yangju">
+                                	<span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">양주시</span>
+                                    <input type="hidden" name="agentGropCode" value="2000">
+                                </a>
+                                <a id="paju" name="areaState" class="area paju">
+                                	<span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">파주시</span>
+                                    <input type="hidden" name="agentGropCode" value="1800">
+                                </a>
+                                <a id="gapyeong" name="areaState" class="area gapyeong">
+                                	<span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">가평군</span>
+                                    <input type="hidden" name="agentGropCode" value="3000">
+                                </a>
+                                <a id="uijeongbu" name="areaState" class="area uijeongbu">
+                                	<span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">의정부시</span>
+                                    <input type="hidden" name="agentGropCode" value="2900">
+                                </a>
+                                <a id="kimpo" name="areaState" class="area kimpo">
+                                	<span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">김포시</span>
+                                    <input type="hidden" name="agentGropCode" value="1000">
+                                </a>
+                                <a id="goyang" name="areaState" class="area goyang">
+                                	<span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">고양시</span>
+                                    <input type="hidden" name="agentGropCode" value="1600">
+                                </a>
+                                <a id="namyangju" name="areaState" class="area namyangju">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">남양주시</span>
+                                	<input type="hidden" name="agentGropCode" value="1700">
+                                </a>
+                                <a id="guri" name="areaState" class="area guri">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">구리시</span>
+                                	<input type="hidden" name="agentGropCode" value="1900">
+                                </a>
+                                <a id="hanam" name="areaState" class="area hanam">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">하남시</span>
+                                	<input type="hidden" name="agentGropCode" value="1200">
+                                </a>
+                                <a id="yangpyeong" name="areaState" class="area yangpyeong">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">양평군</span>
+                                	<input type="hidden" name="agentGropCode" value="1500">
+                                </a>
+                                <a id="bucheon" name="areaState" class="area bucheon">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">부천시</span>
+                                	<input type="hidden" name="agentGropCode" value="0300">
+                                </a>
+                                <a id="siheung" name="areaState" class="area siheung">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">시흥시</span>
+                                	<input type="hidden" name="agentGropCode" value="2500">
+                                </a>
+                                <a id="anyang" name="areaState" class="area anyang">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">안양시</span>
+                                	<input type="hidden" name="agentGropCode" value="2800">
+                                </a>
+                                <a id="gwangmyeong" name="areaState" class="area gwangmyeong">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">광명시</span>
+                                	<input type="hidden" name="agentGropCode" value="0800">
+                                </a>
+                                <a id="seongnam" name="areaState" class="area seongnam">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">성남시</span>
+                                	<input type="hidden" name="agentGropCode" value="0200">
+                                </a>
+                                <a id="gwangju" name="areaState" class="area gwangju">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">광주시</span>
+                                	<input type="hidden" name="agentGropCode" value="0900">
+                                </a>
+                                <a id="uiwang" name="areaState" class="area uiwang">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">의왕시</span>
+                                	<input type="hidden" name="agentGropCode" value="1300">
+                                </a>
+                                <a id="ansan" name="areaState" class="area ansan">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">안산시</span>
+                                	<input type="hidden" name="agentGropCode" value="0500">
+                                </a>
+                                <a id="gunpo" name="areaState" class="area gunpo">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">군포시</span>
+                                	<input type="hidden" name="agentGropCode" value="2400">
+                                </a>
+                                <a id="suwon" name="areaState" class="area suwon">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">수원시</span>
+                                	<input type="hidden" name="agentGropCode" value="0100">
+                                </a>
+                                            <!--
+                                            <a id="gwacheon" name="areaState" class="area gwacheon">
+                                                <span class="dot" style="opacity: 1;"></span>
+                                                <span class="name">과천시</span>
+                                                <input type="hidden" name="agentGropCode" value="3100">
+                                            </a>
+                                             -->
+                                <a id="hwaseong" name="areaState" class="area hwaseong">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">화성시</span>
+                                	<input type="hidden" name="agentGropCode" value="0700">
+                                </a>
+                                <a id="osan" name="areaState" class="area osan">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">오산시</span>
+                                	<input type="hidden" name="agentGropCode" value="1100">
+                                </a>
+                                <a id="yongin" name="areaState" class="area yongin">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">용인시</span>
+                                	<input type="hidden" name="agentGropCode" value="0400">
+                                </a>
+                                <a id="icheon" name="areaState" class="area icheon">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">이천시</span>
+                                	<input type="hidden" name="agentGropCode" value="2700">
+                                </a>
+                                <a id="yeoju" name="areaState" class="area yeoju">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">여주시</span>
+                                	<input type="hidden" name="agentGropCode" value="1400">
+                                </a>
+                                <a id="pyeongtaek" name="areaState" class="area pyeongtaek">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">평택시</span>
+                                	<input type="hidden" name="agentGropCode" value="0600">
+                                </a>
+                                <a id="anseong" name="areaState" class="area anseong">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">안성시</span>
+                                	<input type="hidden" name="agentGropCode" value="2600">
+                                </a>
+                                <a id="goe" name="areaState" class="area goe">
+                                    <span class="dot" style="opacity: 1;"></span>
+                                    <span class="name">경기도교육청</span>
+                                	<input type="hidden" name="agentGropCode" value="3200">
+                            	</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sections sections3">
+                    <div class="dataChart3 borderBox">
+                    	<div class="boxTop">
+                        	<div class="btl">
+                            	<h3 class="titleType1">장서 수집</h3>
+                            </div>
+                        </div>
+                        <div>
+                       	 <div id="chart1"></div>
+                        </div>
+                    </div>
+                    <div class="dataChart3 borderBox">
+                    	<div class="boxTop">
+                        	<div class="btl">
+                            	<h3 class="titleType1">대출/반납</h3>
+                            </div>
+						</div>
+						<div>
+	                        <div id="chart2"></div>
+                        </div>
+	                </div>
+					<div class="dataChart3 borderBox">
+                    	<div class="boxTop">
+                        	<div class="btl">
+                            	<h3 class="titleType1">예약</h3>
+                            </div>
+						</div>
+						<div>
+	                        <div id="chart3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="popupW">
+				  <style>
+
+.excelpopup{display:none}
+.progressPopup{display:none}
+
+</style>
+<div id="divPopup">
+		<div class="blackBg" ></div>
+		<div class="popupType1 wdp20 popup excelpopup">
+			<div class="popupTop">
+				<h3 class="popupTit">엑셀출력</h3>
+			</div>
+			<div class="popupCont2 Scroll1 mht500">
+				<div class="borderBox2">
+					<div id="exDiv1">
+						<input type="checkbox" id="pchk1_1" name="pExcel" value="C"><label
+							for="pchk1_1"><span class="chkbox"></span>선택항목</label>
+					</div>
+					<div id="exDiv2">
+						<input type="checkbox" id="pchk1_2" name="pExcel" value="A"><label
+							for="pchk1_2"><span class="chkbox"></span>검색목록전체</label>
+					</div>
+				</div>
+				<ul class="btnList2">
+					<li><a class="btnType5 okbtn" href="#" title="선택">선택</a></li>
+					<li><a class="btnType5 cancelbtn" href="#" title="닫기">닫기</a></li>
+				</ul>
+			</div>
+			<a class="closeBtn" href="#" title="팝업 닫기"><img class="light"
+				src="images/close.png" alt="닫기 light"><img class="dark"
+				src="images/close_dark.png" alt="닫기 dark"></a>
+		</div>
+
+		<div class="popupType1 popup wdp20  logoutPopup">
+			<div class="popupTop">
+				<h3 class="popupTit">로그아웃 알림</h3>
+			</div>
+			<div class="popupCont2 Scroll1 mht500 alignC ">
+				<div class="borderBox2 ht35 pdt10">
+					<span id="ncounter"></span> 초 후 자동 로그아웃 됩니다. <br>
+				</div>
+				<ul class="btnList2">
+					<li><a class="btnType5 extendBtn" href="#" title="연장하기">연장하기</a></li>
+					<li><a class="btnType5 sLogoutBtn" href="#" title="로그아웃">로그아웃</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- 	<div class="popupType1 ldPop wdp20 popup progressPopup">
+		<div class="blackBg" style="display: block;"></div>
+		<div class="popupType1" style="display: block;">
+				<div class="popupbox">
+					<div class="popupCont">
+						<p class="message"></p>
+					</div>
+					<div class="ldBarW" style="width:100%">
+							<div id="prog1" style="width:100%"></div>
+					</div>
+				</div>
+		</div>
+	</div> -->
+<!-- </div> -->
+<div class="ldPop popup  progressPopup" style="display:none;">
+	<div class="popupbox">
+		<div class="popupCont">
+			<p class="message"></p>
+		</div>
+		<div class="ldBarW" style="width:100%">
+				<div id="prog1" style="width:100%"></div>
+			</div>
+	</div>
+</div>
+
+<div class="alarmPopupW popupType1">
+                    <div class="popupTop">
+                        <h3 class="popupTit"><span class="state"></span>알림</h3>
+                    </div>
+                    <div class="popupCont mht450">
+                            <ul class="alarmList">
+                            </ul>
+                    </div>
+                    <a class="closeBtn" href="#" title="팝업 닫기"><img class="light" src="images/close.png" alt="라이트모드로고"><img class="dark" src="images/close_dark.png" alt="다크모드로고"></a>
+                </div>
+</div>
+
+    </div>
+</body>
+</html>

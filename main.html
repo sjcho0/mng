@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--  -->
+    <title>경기도 종합목록 관리시스템</title>
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+        <link rel="shortcut icon" href="images/favicon/favicon.ico">
+        <link rel="stylesheet" href="jqgrid/css/ui.jqgrid.min.css">
+        <link type="text/css" rel="stylesheet" href="style/css/reset.css">
+        <link type="text/css" rel="stylesheet" href="style/css/common.css">
+        <link type="text/css" rel="stylesheet" href="style/css/content.css">
+        <link type="text/css" rel="stylesheet" href="style/css/layout.css">
+        <link type="text/css" rel="stylesheet" href="style/css/login.css">
+        <link type="text/css" rel="stylesheet" href="style/css/loading-bar.css">
+        <link type="text/css" rel="stylesheet" href="style/css/popup.css">
+        <link type="text/css" rel="stylesheet" href="style/css/grid.css">
+        <link type="text/css" rel="stylesheet" href="style/css/plugin/jquery.mCustomScrollbar.css">
+        <link type="text/css" rel="stylesheet" href="style/css/plugin/timepicker.css">
+        <link rel="stylesheet" href="jquery-ui-1.13.0.base/jquery-ui.min.css">
+        <link rel="stylesheet" href="js/plugin/jquery-ui-1.13.0.custom/jquery-ui-1.13.0.custom/jquery-ui.min.css">
+    
+        <script src="js/plugin/jquery-3.6.3.min.js"></script>
+        <script src="js/plugin/jquery.dotdotdot.js"></script>
+        <script src="js/plugin/jquery.mCustomScrollbar.min.js"></script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+        <script src="js/plugin/jquery-ui-1.13.0.custom/jquery-ui-1.13.0.custom/jquery-ui.min.js"></script>
+        <script src="js/plugin/datepicker-ko.js"></script>
+        <script src="js/plugin/loading-bar.js"></script>
+        <script src="js/plugin/jquery.preloaders.min.js"></script>
+        <script src="js/jquery.serializeObject.min.js"></script>
+        <script src="jqgrid/i18n/grid.locale-kr.js"></script>
+        <script src="jqgrid/jquery.jqgrid.min.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/timer.js?ver=202211231858"></script>
+        
+    </head>
+<body>
+    <div id="divWrapper">
+        <div id="divSnb">
+			<h1 class="logo">
+                <a href="/main.do" title="경기도사이버">
+                    <img class="light" src="images/logo.png" alt="경기도사이버도서관 로고 light">
+                    <img class="dark" src="images/logo_dark.png" alt="경기도사이버도서관 로고 dark">
+                </a>
+            </h1>
+            <div class="manager">
+            <!--  <div class="profileImg">
+                <img src="">
+                <span class="state"></span>
+            </div> -->
+                <span class="name">관리자</span>
+                <span class="tail"> 님</span>
+	            <br>
+	            <a class="viewBtn" id="getMyInfo" href="#"><img src="images/moreBtn.png" alt="회원정보더보기"></a>
+                <p class="mngect">최종로그인시간<br> 2023.11.28 11:00:40<br> (192.168.0.72)</p>
+            </div>
+            <div class="navigationW">
+				<ul class="navigation">
+					<li class="nodepth2" id="O_M0100000">
+						<a href="#" title="통합관제">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon1.png" alt="통합관제">
+								<img class="on mCS_img_loaded" src="images/snbIcon1_over.png" alt="통합관제">
+							</span>
+							<span class="title">통합관제</span>
+							<span class="news">13</span>
+						</a>
+						<div class="depth2W" style="display: none;">
+							<p>통합관제</p> 
+							<ul class="depth2">
+								<li id="l_M0101000">
+									<a href="/combi/dailyHvstView.do" onclick="return chkAuth('M0101000');">일일수집 데이터 현황</a>
+								</li>
+								<li id="l_M0102000">
+									<a href="/combi/hvstreq/harvestReq.do" onclick="return chkAuth('M0102000');">수집 요청 관리</a>
+								</li>
+								<li id="l_M0103000">
+									<a href="/combi/listHvstApi.do" onclick="return chkAuth('M0103000');">수집API 관리</a>
+								</li>
+								<li id="l_M0104000">
+									<a href="/combi/listCenter.do" onclick="return chkAuth('M0104000');">센터 관리</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0200000">
+						<a href="#" title="서지관리">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon2.png" alt="서지관리">
+								<img class="on mCS_img_loaded" src="images/snbIcon2_over.png" alt="서지관리">
+							</span>
+							<span class="title">서지관리</span>
+						</a>
+						<div class="depth2W">
+							<p>서지관리</p> 
+							<ul class="depth2">
+								<li id="l_M0201000">
+									<a href="/book/listBookData.do" onclick="return chkAuth('M0201000');">서지자료관리</a>
+								</li>
+								<li id="l_M0202000">
+									<a href="/book/listDataOnly.do" onclick="return chkAuth('M0202000');">미소장서지관리</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0300000">
+						<a href="#" title="소장관리">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon3.png" alt="소장관리">
+								<img class="on mCS_img_loaded" src="images/snbIcon3_over.png" alt="소장관리">
+							</span>
+							<span class="title">소장관리</span>
+						</a>
+						<div class="depth2W">
+							<p>소장관리</p> 
+							<ul class="depth2">
+								<li id="l_M0301000">
+									<a href="/keep/listAccession.do" onclick="return chkAuth('M0301000');">소장자료관리</a>
+								</li>
+								<li id="l_M0302000">
+									<a href="/keep/listNoData.do" onclick="return chkAuth('M0302000');">미서지소장자료관리</a>
+								</li>
+								<li id="l_M0304000">
+									<a href="/keep/listCheckinout.do" onclick="return chkAuth('M0304000');">대출/반납자료관리</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0400000">
+						<a href="#" title="예약관리">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon4.png" alt="예약관리">
+								<img class="on mCS_img_loaded" src="images/snbIcon4_over.png" alt="예약관리">
+							</span>
+							<span class="title">예약관리</span>
+						</a>
+						<div class="depth2W">
+							<p>예약관리</p> 
+							<ul class="depth2">
+								<li id="l_M0401000">
+									<a href="/reserv/listReserv.do" onclick="return chkAuth('M0401000');">예약자료관리</a>
+								</li>
+								<li id="l_M0402000">
+									<a href="/reserv/listReservHist.do" onclick="return chkAuth('M0402000');">예약이력관리</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0600000">
+						<a href="#" title="통계">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon5.png" alt="통계">
+								<img class="on mCS_img_loaded" src="images/snbIcon5_over.png" alt="통계">
+							</span>
+							<span class="title">통계</span>
+						</a>
+						<div class="depth2W">
+							<p>통계</p> 
+							<ul class="depth2">
+								<li id="l_M0601000">
+									<a href="/stat/possView.do" onclick="return chkAuth('M0601000');">장서보유현황</a>
+								</li>
+								<li id="l_M0602000">
+									<a href="/stat/checkinoutView.do" onclick="return chkAuth('M0602000');">대출/반납현황</a>
+								</li>
+								<li id="l_M0603000">
+									<a href="/stat/dailyHvstView.do" onclick="return chkAuth('M0603000');">일일데이터수집현황</a>
+								</li>
+								<li id="l_M0604000">
+									<a href="/stat/popkeywordsView.do" onclick="return chkAuth('M0604000');">인기검색어</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0700000">
+						<a href="#" title="도서관관리">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon6.png" alt="도서관관리">
+								<img class="on mCS_img_loaded" src="images/snbIcon6_over.png" alt="도서관관리">
+							</span>
+							<span class="title">도서관관리</span>
+						</a>
+						<div class="depth2W">
+							<p>도서관관리</p> 
+							<ul class="depth2">
+								<li id="l_M0701000">
+									<a href="/libmng/listLib.do" onclick="return chkAuth('M0701000');">도서관관리</a>
+								</li>
+								<li id="l_M0702000">
+									<a href="/libmng/listLibCode.do" onclick="return chkAuth('M0702000');">도서관코드관리</a>
+								</li>
+								<li id="l_M0703000">
+									<a href="/libmng/listLimit.do" onclick="return chkAuth('M0703000');">이용제한 코드관리</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0800000">
+						<a href="#" title="시스템관리">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon7.png" alt="시스템관리">
+								<img class="on mCS_img_loaded" src="images/snbIcon7_over.png" alt="시스템관리">
+							</span>
+							<span class="title">시스템관리</span>
+						</a>
+						<div class="depth2W">
+							<p>시스템관리</p> 
+							<ul class="depth2">
+								<li id="l_M0801000">
+									<a href="/system/listManager.do" onclick="return chkAuth('M0801000');">사용자관리</a>
+								</li>
+								<li id="l_M0802000">
+									<a href="/system/listMenuAuth.do" onclick="return chkAuth('M0802000');">메뉴권한관리</a>
+								</li>
+								<li id="l_M0803000">
+									<a href="/system/listCode.do" onclick="return chkAuth('M0803000');">코드관리</a>
+								</li>
+								<li id="l_M0804000">
+									<a href="/system/listCodeType.do" onclick="return chkAuth('M0804000');">코드유형 관리</a>
+								</li>
+								<li id="l_M0805000">
+									<a href="/system/listIPRestrict.do" onclick="return chkAuth('M0805000');">IP접근제한관리</a>
+								</li>
+								<li>
+									<a href="#" title="이력관리"><span class="title">이력관리</span></a>
+									<ul class="depth3">
+										<li id="l_M0806010"><a href="/system/listLoginHist.do" onclick="return chkAuth('M0806010');">로그인이력</a></li>
+										<li id="l_M0806020"><a href="/system/listPersonalInfoHist.do" onclick="return chkAuth('M0806020');">개인정보접근이력</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0900000">
+						<a href="#" title="OpenAPI">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon8.png" alt="OpenAPI">
+								<img class="on mCS_img_loaded" src="images/snbIcon8_over.png" alt="OpenAPI">
+							</span>
+							<span class="title">OpenAPI</span>
+						</a>
+						<div class="depth2W">
+							<p>OpenAPI</p> 
+							<ul class="depth2">
+								<li id="l_M0901000">
+									<a href="/openAPI/listApi.do" onclick="return chkAuth('M0901000');">OpenAPI 관리</a>
+								</li>
+								<li id="l_M0902000">
+									<a href="/openAPIApp/listApiApp.do" onclick="return chkAuth('M0902000');">OpenAPI 신청관리</a>
+								</li>
+								<li id="l_M0903000">
+									<a href="/openAPIApp/listApiServiceList.do" onclick="return chkAuth('M0903000');">OpenAPI 서비스관리</a>
+								</li>
+								<li id="l_M0904000">
+									<a href="/openAPIApp/openApiTest.do" onclick="return chkAuth('M0904000');">OpenAPI 테스트</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+            </div>
+        </div>
+        <div id="divContents">
+            <div id="divContent">
+                <div class="contentTop">
+                    <div class="left">
+                        <a class="snbBtn" href="#" title="메뉴 열기">
+                            <img class="open light" src="images/snb_open.png" alt="메뉴키우기 light">
+                            <img class="close light" src="images/snb_close.png" alt="메뉴줄이기 light">
+                            <img class="open dark" src="images/snb_open_dark.png" alt="메뉴키우기 dark">
+                            <img class="close dark" src="images/snb_close_dark.png" alt="메뉴줄이기 dark">
+                        </a>
+                        <div class="pageW">
+                            <h2 class="pageName">경기도 종합목록 관리시스템</h2>
+                        </div>
+                    </div>
+                    <div class="right flexitemcenter">
+                        <span id="counter" class="titleType1 wd80 "></span>
+                        <div class="logout">
+                            <a href="#" title="로그아웃" class="logoutBtn">
+                                <img class="light" src="images/logOut.png" alt="">
+								<img class="dark" src="images/logOut_white.png" alt="">
+                            </a>
+                        </div>
+                        <br>
+                        <div class="alarmW">
+                            <a class="alarmBtn" href="#" title="알람"><img class="light" src="images/alarm.png" alt=""><img class="dark" src="images/alarm_white.png" alt=""><span class="state"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="divContent2">
+                    <div class="contentW">
+						<ul class="chartList">
+							<li class="chartlist1">
+								<div class="textW">
+									<p class="title">등록건수</p>
+									<p>전&nbsp;&nbsp;&nbsp;&nbsp;일  <span>530</span></p>
+									<p>전전일  <span>10,734</span></p>
+								</div>
+							</li>
+							<li class="chartlist2">
+								<div class="textW">
+									<p class="title">대출건수</p>
+									<p>전&nbsp;&nbsp;&nbsp;&nbsp;일  <span>0</span></p>
+									<p>전전일  <span>0</span></p>
+								</div>
+							</li>
+							<li class="chartlist3">
+								<div class="textW">
+									<p class="title">반납건수</p>
+									<p>전&nbsp;&nbsp;&nbsp;&nbsp;일  <span>0</span></p>
+									<p>전전일  <span>0</span></p>
+								</div>
+							</li>
+							<li class="chartlist4">
+								<div class="textW">
+									<p class="title">예약건수</p>
+									<p>전&nbsp;&nbsp;&nbsp;&nbsp;일  <span>0</span></p>
+									<p>전전일  <span>0</span></p>
+								</div>
+							</li>
+							<li class="chartlist5">
+								<div class="textW">
+									<p class="title">제적건수</p>
+									<p>전&nbsp;&nbsp;&nbsp;&nbsp;일  <span>0</span></p>
+									<p>전전일  <span>0</span></p>
+								</div>
+							</li>
+						</ul>
+						<div class="flex flexbetween mobileFlex">
+							<div class="left wdp100 mgr20">
+								<div class="borderBox">
+									<div class="boxTop">
+										<div class="btl">
+											<h3 class="titleType1">지역별 현황</h3>
+										</div>
+										<div class="btr">
+											<a class="viewBtn" id="popMainBtn" href="#"><img src="images/moreBtn.png" alt="지역별현황 더보기"></a>
+										</div>
+									</div>
+									<div class="boxCont alignC">
+										<ul class="legend">
+											<li><span class="palette colorBg4"></span>정상작동</li>
+											<li><span class="palette colorBg5"></span>이상작동</li>
+										</ul>
+										<div class="areaMap">
+											<img src="images/mapOnly.png" alt="경기도지도">
+											<div class="areaList">
+												<a id="yeoncheon" name="areaState" class="area yeoncheon">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">연천군</span>
+													<input type="hidden" name="agentGropCode" value="2300">
+												</a>
+												<a id="pocheon" name="areaState" class="area pocheon">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">포천시</span>
+													<input type="hidden" name="agentGropCode" value="2100">
+												</a>
+												<a id="dongducheon" name="areaState" class="area dongducheon">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">동두천시</span>
+													<input type="hidden" name="agentGropCode" value="2200">
+												</a>
+												<a id="yangju" name="areaState" class="area yangju">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">양주시</span>
+													<input type="hidden" name="agentGropCode" value="2000">
+												</a>
+												<a id="paju" name="areaState" class="area paju">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">파주시</span>
+													<input type="hidden" name="agentGropCode" value="1800">
+												</a>
+												<a id="gapyeong" name="areaState" class="area gapyeong">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">가평군</span>
+													<input type="hidden" name="agentGropCode" value="3000">
+												</a>
+												<a id="uijeongbu" name="areaState" class="area uijeongbu">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">의정부시</span>
+													<input type="hidden" name="agentGropCode" value="2900">
+												</a>
+												<a id="kimpo" name="areaState" class="area kimpo">
+													<span class="dot" style="opacity: 0.559413; width: 16px; height: 16px;"></span>
+													<span class="name">김포시</span>
+													<input type="hidden" name="agentGropCode" value="1000">
+												</a>
+												<a id="goyang" name="areaState" class="area goyang">
+													<span class="dot" style="opacity: 0.740587; width: 12px; height: 12px;"></span>
+													<span class="name">고양시</span>
+													<input type="hidden" name="agentGropCode" value="1600">
+												</a>
+												<a id="namyangju" name="areaState" class="area namyangju">
+													<span class="dot" style="opacity: 0.740587; width: 12px; height: 12px;"></span>
+													<span class="name">남양주시</span>
+													<input type="hidden" name="agentGropCode" value="1700">
+												</a>
+												<a id="guri" name="areaState" class="area guri">
+													<span class="dot" style="opacity: 0.740587; width: 12px; height: 12px;"></span>
+													<span class="name">구리시</span>
+													<input type="hidden" name="agentGropCode" value="1900">
+												</a>
+												<a id="hanam" name="areaState" class="area hanam">
+													<span class="dot" style="opacity: 0.740587; width: 12px; height: 12px;"></span>
+													<span class="name">하남시</span>
+													<input type="hidden" name="agentGropCode" value="1200">
+												</a>
+												<a id="yangpyeong" name="areaState" class="area yangpyeong">
+													<span class="dot" style="opacity: 0.740587; width: 12px; height: 12px;"></span>
+													<span class="name">양평군</span>
+													<input type="hidden" name="agentGropCode" value="1500">
+												</a>
+												<a id="bucheon" name="areaState" class="area bucheon">
+													<span class="dot" style="opacity: 0.740587; width: 12px; height: 12px;"></span>
+													<span class="name">부천시</span>
+													<input type="hidden" name="agentGropCode" value="0300">
+												</a>
+												<a id="siheung" name="areaState" class="area siheung">
+													<span class="dot" style="opacity: 0.740587; width: 12px; height: 12px;"></span>
+													<span class="name">시흥시</span>
+													<input type="hidden" name="agentGropCode" value="2500">
+												</a>
+												<a id="anyang" name="areaState" class="area anyang">
+													<span class="dot" style="opacity: 0.65; width: 12px; height: 12px;"></span>
+													<span class="name">안양시</span>
+													<input type="hidden" name="agentGropCode" value="2800">
+												</a>
+												<a id="gwangmyeong" name="areaState" class="area gwangmyeong">
+													<span class="dot" style="opacity: 0.825; width: 12px; height: 12px;"></span>
+													<span class="name">광명시</span>
+													<input type="hidden" name="agentGropCode" value="0800">
+												</a>
+												<a id="seongnam" name="areaState" class="area seongnam">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">성남시</span>
+													<input type="hidden" name="agentGropCode" value="0200">
+												</a>
+												<a id="gwangju" name="areaState" class="area gwangju">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">광주시</span>
+													<input type="hidden" name="agentGropCode" value="0900">
+												</a>
+												<a id="uiwang" name="areaState" class="area uiwang">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">의왕시</span>
+													<input type="hidden" name="agentGropCode" value="1300">
+												</a>
+												<a id="ansan" name="areaState" class="area ansan">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">안산시</span>
+													<input type="hidden" name="agentGropCode" value="0500">
+												</a>
+												<a id="gunpo" name="areaState" class="area gunpo">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">군포시</span>
+													<input type="hidden" name="agentGropCode" value="2400">
+												</a>
+												<a id="suwon" name="areaState" class="area suwon">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">수원시</span>
+													<input type="hidden" name="agentGropCode" value="0100">
+												</a>
+										
+												<a id="gwacheon" name="areaState" class="area gwacheon">
+													<span class="dot" style="opacity: 1;"></span>
+													<span class="name">과천시</span>
+													<input type="hidden" name="agentGropCode" value="3100">
+												</a>
+										
+												<a id="hwaseong" name="areaState" class="area hwaseong">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">화성시</span>
+													<input type="hidden" name="agentGropCode" value="0700">
+												</a>
+												<a id="osan" name="areaState" class="area osan">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">오산시</span>
+													<input type="hidden" name="agentGropCode" value="1100">
+												</a>
+												<a id="yongin" name="areaState" class="area yongin">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">용인시</span>
+													<input type="hidden" name="agentGropCode" value="0400">
+												</a>
+												<a id="icheon" name="areaState" class="area icheon">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">이천시</span>
+													<input type="hidden" name="agentGropCode" value="2700">
+												</a>
+												<a id="yeoju" name="areaState" class="area yeoju error">
+													<span class="dot" style="opacity: 0.918508; width: 16px; height: 16px;"></span>
+													<span class="name">여주시</span>
+													<input type="hidden" name="agentGropCode" value="1400">
+												</a>
+												<a id="pyeongtaek" name="areaState" class="area pyeongtaek">
+													<span class="dot" style="opacity: 0.519454; width: 12px; height: 12px;"></span>
+													<span class="name">평택시</span>
+													<input type="hidden" name="agentGropCode" value="0600">
+												</a>
+												<a id="anseong" name="areaState" class="area anseong">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">안성시</span>
+													<input type="hidden" name="agentGropCode" value="2600">
+												</a>
+												<a id="goe" name="areaState" class="area goe">
+													<span class="dot" style="opacity: 1; width: 12px; height: 12px;"></span>
+													<span class="name">경기도교육청</span>
+													<input type="hidden" name="agentGropCode" value="3200">
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="right wd580">
+								<div class="normalBox">
+									<div class="boxTop">
+										<div class="btl">
+											<h3 class="titleType1">지역별 수집</h3>
+										</div>
+									</div>
+									<div class="tableW"></div>
+								</div>
+								<div class="normalBox">
+									<div class="boxTop">
+										<div class="btl">
+											<h3 class="titleType1">수집장애이력</h3>
+										</div>
+										<div class="btr"><a class="viewBtn" href="javascript:collErrHistoryPopup()"><img src="images/moreBtn.png" alt="수집장애이력 더보기"></a></div>
+									</div>
+									<div class="tableW">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+				<div class="themeBtnW">
+					<a class="themeBtn darkBtn" href="#" title="다크모드 보기"><img src="images/dark.png" alt="다크모드로고"><span>다크모드 보기</span></a>
+					<a class="themeBtn lightBtn" href="#" title="라이트모드 보기"><img src="images/light.png" alt="라이트모드로고"><span>라이트모드 보기</span></a>
+				</div>
+            </div>
+            <div id="divFooter">
+                <p>16258 경기도 수원시 팔달구신풍로 23번길 68(신풍동) Tel:031)252-5237
+                    Fax:031)246-4021</p>
+                <p class="copyRight">Copyright ⓒGyeonggi-do Cyber Library. All
+                    rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

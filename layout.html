@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--  -->
+    <title>경기도 종합목록 관리시스템</title>
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+        <link rel="shortcut icon" href="images/favicon/favicon.ico">
+        <link rel="stylesheet" href="jqgrid/css/ui.jqgrid.min.css">
+        <link type="text/css" rel="stylesheet" href="style/css/reset.css">
+        <link type="text/css" rel="stylesheet" href="style/css/common.css">
+        <link type="text/css" rel="stylesheet" href="style/css/content.css">
+        <link type="text/css" rel="stylesheet" href="style/css/layout.css">
+        <link type="text/css" rel="stylesheet" href="style/css/login.css">
+        <link type="text/css" rel="stylesheet" href="style/css/loading-bar.css">
+        <link type="text/css" rel="stylesheet" href="style/css/popup.css">
+        <link type="text/css" rel="stylesheet" href="style/css/grid.css">
+        <link type="text/css" rel="stylesheet" href="style/css/plugin/jquery.mCustomScrollbar.css">
+        <link type="text/css" rel="stylesheet" href="style/css/plugin/timepicker.css">
+        <link rel="stylesheet" href="jquery-ui-1.13.0.base/jquery-ui.min.css">
+        <link rel="stylesheet" href="js/plugin/jquery-ui-1.13.0.custom/jquery-ui-1.13.0.custom/jquery-ui.min.css">
+    
+        <script src="js/plugin/jquery-3.6.3.min.js"></script>
+        <script src="js/plugin/jquery.dotdotdot.js"></script>
+        <script src="js/plugin/jquery.mCustomScrollbar.min.js"></script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+        <script src="js/plugin/jquery-ui-1.13.0.custom/jquery-ui-1.13.0.custom/jquery-ui.min.js"></script>
+        <script src="js/plugin/datepicker-ko.js"></script>
+        <script src="js/plugin/loading-bar.js"></script>
+        <script src="js/plugin/jquery.preloaders.min.js"></script>
+        <script src="js/jquery.serializeObject.min.js"></script>
+        <script src="jqgrid/i18n/grid.locale-kr.js"></script>
+        <script src="jqgrid/jquery.jqgrid.min.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/timer.js?ver=202211231858"></script>
+        
+    </head>
+<body>
+    <div id="divWrapper">
+        <div id="divSnb">
+			<h1 class="logo">
+                <a href="/main.do" title="경기도사이버">
+                    <img class="light" src="images/logo.png" alt="경기도사이버도서관 로고 light">
+                    <img class="dark" src="images/logo_dark.png" alt="경기도사이버도서관 로고 dark">
+                </a>
+            </h1>
+            <div class="manager">
+            <!--  <div class="profileImg">
+                <img src="">
+                <span class="state"></span>
+            </div> -->
+                <span class="name">관리자</span>
+                <span class="tail"> 님</span>
+	            <br>
+	            <a class="viewBtn" id="getMyInfo" href="#"><img src="images/moreBtn.png" alt="회원정보더보기"></a>
+                <p class="mngect">최종로그인시간<br> 2023.11.28 11:00:40<br> (192.168.0.72)</p>
+            </div>
+            <div class="navigationW">
+				<ul class="navigation">
+					<li class="nodepth2" id="O_M0100000">
+						<a href="#" title="통합관제">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon1.png" alt="통합관제">
+								<img class="on mCS_img_loaded" src="images/snbIcon1_over.png" alt="통합관제">
+							</span>
+							<span class="title">통합관제</span>
+						</a>
+						<div class="depth2W" style="display: none;">
+							<p>통합관제</p> 
+							<ul class="depth2">
+								<li id="l_M0101000">
+									<a href="/combi/dailyHvstView.do" onclick="return chkAuth('M0101000');">일일수집 데이터 현황</a>
+								</li>
+								<li id="l_M0102000">
+									<a href="/combi/hvstreq/harvestReq.do" onclick="return chkAuth('M0102000');">수집 요청 관리</a>
+								</li>
+								<li id="l_M0103000">
+									<a href="/combi/listHvstApi.do" onclick="return chkAuth('M0103000');">수집API 관리</a>
+								</li>
+								<li id="l_M0104000">
+									<a href="/combi/listCenter.do" onclick="return chkAuth('M0104000');">센터 관리</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0200000">
+						<a href="#" title="서지관리">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon2.png" alt="서지관리">
+								<img class="on mCS_img_loaded" src="images/snbIcon2_over.png" alt="서지관리">
+							</span>
+							<span class="title">서지관리</span>
+						</a>
+						<div class="depth2W">
+							<p>서지관리</p> 
+							<ul class="depth2">
+								<li id="l_M0201000">
+									<a href="/book/listBookData.do" onclick="return chkAuth('M0201000');">서지자료관리</a>
+								</li>
+								<li id="l_M0202000">
+									<a href="/book/listDataOnly.do" onclick="return chkAuth('M0202000');">미소장서지관리</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0300000">
+						<a href="#" title="소장관리">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon3.png" alt="소장관리">
+								<img class="on mCS_img_loaded" src="images/snbIcon3_over.png" alt="소장관리">
+							</span>
+							<span class="title">소장관리</span>
+						</a>
+						<div class="depth2W">
+							<p>소장관리</p> 
+							<ul class="depth2">
+								<li id="l_M0301000">
+									<a href="/keep/listAccession.do" onclick="return chkAuth('M0301000');">소장자료관리</a>
+								</li>
+								<li id="l_M0302000">
+									<a href="/keep/listNoData.do" onclick="return chkAuth('M0302000');">미서지소장자료관리</a>
+								</li>
+								<li id="l_M0304000">
+									<a href="/keep/listCheckinout.do" onclick="return chkAuth('M0304000');">대출/반납자료관리</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0400000">
+						<a href="#" title="예약관리">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon4.png" alt="예약관리">
+								<img class="on mCS_img_loaded" src="images/snbIcon4_over.png" alt="예약관리">
+							</span>
+							<span class="title">예약관리</span>
+						</a>
+						<div class="depth2W">
+							<p>예약관리</p> 
+							<ul class="depth2">
+								<li id="l_M0401000">
+									<a href="/reserv/listReserv.do" onclick="return chkAuth('M0401000');">예약자료관리</a>
+								</li>
+								<li id="l_M0402000">
+									<a href="/reserv/listReservHist.do" onclick="return chkAuth('M0402000');">예약이력관리</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0600000">
+						<a href="#" title="통계">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon5.png" alt="통계">
+								<img class="on mCS_img_loaded" src="images/snbIcon5_over.png" alt="통계">
+							</span>
+							<span class="title">통계</span>
+						</a>
+						<div class="depth2W">
+							<p>통계</p> 
+							<ul class="depth2">
+								<li id="l_M0601000">
+									<a href="/stat/possView.do" onclick="return chkAuth('M0601000');">장서보유현황</a>
+								</li>
+								<li id="l_M0602000">
+									<a href="/stat/checkinoutView.do" onclick="return chkAuth('M0602000');">대출/반납현황</a>
+								</li>
+								<li id="l_M0603000">
+									<a href="/stat/dailyHvstView.do" onclick="return chkAuth('M0603000');">일일데이터수집현황</a>
+								</li>
+								<li id="l_M0604000">
+									<a href="/stat/popkeywordsView.do" onclick="return chkAuth('M0604000');">인기검색어</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0700000">
+						<a href="#" title="도서관관리">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon6.png" alt="도서관관리">
+								<img class="on mCS_img_loaded" src="images/snbIcon6_over.png" alt="도서관관리">
+							</span>
+							<span class="title">도서관관리</span>
+						</a>
+						<div class="depth2W">
+							<p>도서관관리</p> 
+							<ul class="depth2">
+								<li id="l_M0701000">
+									<a href="/libmng/listLib.do" onclick="return chkAuth('M0701000');">도서관관리</a>
+								</li>
+								<li id="l_M0702000">
+									<a href="/libmng/listLibCode.do" onclick="return chkAuth('M0702000');">도서관코드관리</a>
+								</li>
+								<li id="l_M0703000">
+									<a href="/libmng/listLimit.do" onclick="return chkAuth('M0703000');">이용제한 코드관리</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0800000">
+						<a href="#" title="시스템관리">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon7.png" alt="시스템관리">
+								<img class="on mCS_img_loaded" src="images/snbIcon7_over.png" alt="시스템관리">
+							</span>
+							<span class="title">시스템관리</span>
+						</a>
+						<div class="depth2W">
+							<p>시스템관리</p> 
+							<ul class="depth2">
+								<li id="l_M0801000">
+									<a href="/system/listManager.do" onclick="return chkAuth('M0801000');">사용자관리</a>
+								</li>
+								<li id="l_M0802000">
+									<a href="/system/listMenuAuth.do" onclick="return chkAuth('M0802000');">메뉴권한관리</a>
+								</li>
+								<li id="l_M0803000">
+									<a href="/system/listCode.do" onclick="return chkAuth('M0803000');">코드관리</a>
+								</li>
+								<li id="l_M0804000">
+									<a href="/system/listCodeType.do" onclick="return chkAuth('M0804000');">코드유형 관리</a>
+								</li>
+								<li id="l_M0805000">
+									<a href="/system/listIPRestrict.do" onclick="return chkAuth('M0805000');">IP접근제한관리</a>
+								</li>
+								<li>
+									<a href="#" title="이력관리"><span class="title">이력관리</span></a>
+									<ul class="depth3">
+										<li id="l_M0806010"><a href="/system/listLoginHist.do" onclick="return chkAuth('M0806010');">로그인이력</a></li>
+										<li id="l_M0806020"><a href="/system/listPersonalInfoHist.do" onclick="return chkAuth('M0806020');">개인정보접근이력</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nodepth2" id="O_M0900000">
+						<a href="#" title="OpenAPI">
+							<span class="imgW">
+								<img class="off mCS_img_loaded" src="images/snbIcon8.png" alt="OpenAPI">
+								<img class="on mCS_img_loaded" src="images/snbIcon8_over.png" alt="OpenAPI">
+							</span>
+							<span class="title">OpenAPI</span>
+						</a>
+						<div class="depth2W">
+							<p>OpenAPI</p> 
+							<ul class="depth2">
+								<li id="l_M0901000">
+									<a href="/openAPI/listApi.do" onclick="return chkAuth('M0901000');">OpenAPI 관리</a>
+								</li>
+								<li id="l_M0902000">
+									<a href="/openAPIApp/listApiApp.do" onclick="return chkAuth('M0902000');">OpenAPI 신청관리</a>
+								</li>
+								<li id="l_M0903000">
+									<a href="/openAPIApp/listApiServiceList.do" onclick="return chkAuth('M0903000');">OpenAPI 서비스관리</a>
+								</li>
+								<li id="l_M0904000">
+									<a href="/openAPIApp/openApiTest.do" onclick="return chkAuth('M0904000');">OpenAPI 테스트</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+            </div>
+        </div>
+        <div id="divContents">
+            <div id="divContent">
+                <div class="contentTop">
+                    <div class="left">
+                        <a class="snbBtn" href="#" title="메뉴 열기">
+                            <img class="open light" src="images/snb_open.png" alt="메뉴키우기 light">
+                            <img class="close light" src="images/snb_close.png" alt="메뉴줄이기 light">
+                            <img class="open dark" src="images/snb_open_dark.png" alt="메뉴키우기 dark">
+                            <img class="close dark" src="images/snb_close_dark.png" alt="메뉴줄이기 dark">
+                        </a>
+                        <div class="pageW">
+                            <h2 class="pageName">경기도 종합목록 관리시스템</h2>
+                        </div>
+                    </div>
+                    <div class="right flexitemcenter">
+                        <span id="counter" class="titleType1 wd80 "></span>
+                        <div class="logout">
+                            <a href="#" title="로그아웃" class="logoutBtn">
+                                <img src="images/logOut.png" alt="">
+                            </a>
+                        </div>
+                        <br>
+                        <div class="alarmW">
+                            <a class="alarmBtn" href="#" title="알람"><img src="images/alarm.png" alt=""><span class="state"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="divContent2">
+                    <div class="contentW"></div>
+                </div>
+				<div class="themeBtnW">
+					<a class="themeBtn darkBtn" href="#" title="다크모드 보기"><img src="/mng/images/dark.png" alt="다크모드로고"><span>다크모드 보기</span></a>
+					<a class="themeBtn lightBtn" href="#" title="라이트모드 보기"><img src="/mng/images/light.png" alt="라이트모드로고"><span>라이트모드 보기</span></a>
+				</div>
+            </div>
+            <div id="divFooter">
+                <p>16258 경기도 수원시 팔달구신풍로 23번길 68(신풍동) Tel:031)252-5237
+                    Fax:031)246-4021</p>
+                <p class="copyRight">Copyright ⓒGyeonggi-do Cyber Library. All
+                    rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

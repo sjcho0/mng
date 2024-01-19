@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guide</title>
+    <link type="text/css" rel="stylesheet" href="style/css/plugin/jquery.mCustomScrollbar.css">
+    <link type="text/css" rel="stylesheet" href="js/plugin/jquery-ui-1.13.0.custom/jquery-ui-1.13.0.custom/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="style/css/plugin/jquery.stickytable.css">
+    <link type="text/css" rel="stylesheet" href="style/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="style/css/content.css">
+    <link type="text/css" rel="stylesheet" href="style/css/common.css">
+    
+    
+    <script src="js/plugin/jquery-1.8.3.min.js"></script>
+    <script src="js/plugin/jquery.dotdotdot.js"></script>
+    <script src="js/plugin/jquery.mCustomScrollbar.min.js"></script>
+    <script src="js/plugin/jquery-ui-1.13.0.custom/jquery-ui-1.13.0.custom/jquery-ui.min.js"></script>
+    <script src="js/plugin/jquery.stickytable.js"></script>
+    <script src="js/plugin/datepicker-ko.js"></script>
+    <script src="js/common.js"></script>
+
+    <style>
+        body{padding: 0 20px; background: #f6f7fa;}
+        html[data-dark=true] body{background: #000;}
+        h1{font-size: 40px; padding: 20px 0; margin-bottom: 20px; font-weight: 800;}
+        h2{font-size: 30px; margin-bottom: 10px; font-weight: 600;}
+        .boxdiv{border: 1px solid #eee; padding: 15px; margin-bottom: 30px;}
+        .clear::after{content: ""; display: block; clear: both;}
+        .margin table{width: 23%; float: left; margin: 0 1%; border: 1px solid #eee;}
+        .margin table tr {border: 1px solid #eee;}
+        .margin table tr th{font-size: 18px; padding: 10px;}
+        .margin table tr td{border: 1px solid #eee; padding: 10px;}
+        .boxdiv .box{border: 1px solid #000; padding: 10px 0; font-weight: 800; text-indent: 20px;}
+        .boxdiv > ul li{margin: 0 0 20px;}
+        p{font-size: 18px; margin-bottom: 10px;}
+        .popupW{position: relative; height: 100vh;}
+        .popup{display: block; position: absolute;}
+        .bubbleTitle{text-align: center; width: 400px; border: 1px solid #eee; height: auto;}
+        .bubblebox{display: block;}
+        .boxdiv .flex div{background-color: rgb(236, 208, 208); padding: 20px;}
+        .boxdiv .flex div:first-child{padding: 30px;}
+        ul li table th{text-align: center;}
+
+        /* themeBtn */
+        .themeBtn{position: fixed; right: 87px; bottom: 97px; padding: 16px; border-radius: 16px; background-color: #fff; box-shadow: 7px 5px 16px 0px rgba(0, 0, 0, 0.24); font-size: 13px; font-family: PretendardSB, sans-serif; color: #333333; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; z-index: 9999;}
+        .themeBtn img{margin-right: 10px;}
+        .themeBtn.lightBtn{display: none; background-color: #06152b; color: #fefefe;}
+
+        /* themeBtn */
+        html[data-dark=true] .themeBtn.darkBtn{display: none;}
+        html[data-dark=true] .themeBtn.lightBtn{display: flex;}
+    </style>
+</head>
+<body>
+    <h1>common.css</h1>
+    <div class="boxdiv">
+        <h2>Color</h2>
+        <ul class="clear">
+            <li><p>- class="color1"</p><div class="color1">ABCDEFG</div></li>
+            <li><p>- class="color2"</p><div class="color2">ABCDEFG</div></li>
+            <li><p>- class="color3"</p><div class="color3">ABCDEFG</div></li>
+            <li><p>- class="color4"</p><div class="color4">ABCDEFG</div></li>
+            <li><p>- class="color5"</p><div class="color5">ABCDEFG</div></li>
+            <li><p>- class="color6"</p><div class="color6">ABCDEFG</div></li>
+            <li><p>- class="color7"</p><div class="color7" style="background-color: black;">ABCDEFG</div></li>
+            <li><p>- class="color8"</p><div class="color8">ABCDEFG</div></li>
+            <li><p>- class="color9"</p><div class="color9">ABCDEFG</div></li>
+            <li><p>- class="color10"</p><div class="color10">ABCDEFG</div></li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>background-color</h2>
+        <ul class="clear">
+            <li><p>- class="colorBg1"</p><div class="colorBg1">ABCDEFG</div></li>
+            <li><p>- class="colorBg2"</p><div class="colorBg2">ABCDEFG</div></li>
+            <li><p>- class="colorBg3"</p><div class="colorBg3">ABCDEFG</div></li>
+            <li><p>- class="colorBg4"</p><div class="colorBg4">ABCDEFG</div></li>
+            <li><p>- class="colorBg5"</p><div class="colorBg5">ABCDEFG</div></li>
+        </ul>
+    </div>
+    <div class="boxdiv clear margin">
+        <h2>Margin</h2>
+        <table>
+            <colgroup>
+                <col style="width: 50%;">
+                <col style="width: 50%;">
+            </colgroup>
+           <tr>
+               <th colspan="2" class="alignL">margin-top</th>
+           </tr>
+           <tr>
+                <td>class="mgauto"</td>
+                <td>margin:0px auto;</td>
+            </tr>
+           <tr>
+               <td>class="mgt0"</td>
+               <td>margin-top:0px;</td>
+           </tr>
+           <tr>
+                <td>class="mgt5"</td>
+                <td>margin-top:5px;</td>
+            </tr>
+            <tr>
+                <td>class="mgt10"</td>
+                <td>margin-top:10px;</td>
+            </tr>
+            <tr>
+                <td>class="mgt15"</td>
+                <td>margin-top:15px;</td>
+            </tr>
+            <tr>
+                <td>class="mgt20"</td>
+                <td>margin-top:20px;</td>
+            </tr>
+            <tr>
+                <td>class="mgt25"</td>
+                <td>margin-top:25px;</td>
+            </tr>
+            <tr>
+                <td>class="mgt30"</td>
+                <td>margin-top:30px;</td>
+            </tr>
+            <tr>
+                <td>class="mgt35"</td>
+                <td>margin-top:35px;</td>
+            </tr>
+            <tr>
+                <td>class="mgt40"</td>
+                <td>margin-top:40px;</td>
+            </tr>
+            <tr>
+                <td>class="mgt50"</td>
+                <td>margin-top:50px;</td>
+            </tr>
+        </table>
+        <table>
+            <colgroup>
+                <col style="width: 50%;">
+                <col style="width: 50%;">
+            </colgroup>
+            <tr>
+                <th colspan="2" class="alignL">margin-left</th>
+            </tr>
+            <tr>
+                <td>class="mgl0"</td>
+                <td>margin-left:0px;</td>
+            </tr>
+            <tr>
+                <td>class="mgl5"</td>
+                <td>margin-left:5px;</td>
+            </tr>
+            <tr>
+                <td>class="mgl10"</td>
+                <td>margin-left:10px;</td>
+            </tr>
+            <tr>
+                <td>class="mgl15"</td>
+                <td>margin-left:15px;</td>
+            </tr>
+            <tr>
+                <td>class="mgl20"</td>
+                <td>margin-left:20px;</td>
+            </tr>
+            <tr>
+                <td>class="mgl25"</td>
+                <td>margin-left:25px;</td>
+            </tr>
+            <tr>
+                <td>class="mgl30"</td>
+                <td>margin-left:30px;</td>
+            </tr>
+            <tr>
+                <td>class="mgl35"</td>
+                <td>margin-left:35px;</td>
+            </tr>
+            <tr>
+                <td>class="mgl40"</td>
+                <td>margin-left:40px;</td>
+            </tr>
+            <tr>
+                <td>class="mgl50"</td>
+                <td>margin-left:50px;</td>
+            </tr>
+        </table>
+        <table>
+            <colgroup>
+                <col style="width: 50%;">
+                <col style="width: 50%;">
+            </colgroup>
+            <tr>
+                <th colspan="2" class="alignL">margin-bottom</th>
+            </tr>
+            <tr>
+                <td>class="mgb0"</td>
+                <td>margin-bottom:0px;</td>
+            </tr>
+            <tr>
+                 <td>class="mgb5"</td>
+                 <td>margin-bottom:5px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgb10"</td>
+                 <td>margin-bottom:10px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgb15"</td>
+                 <td>margin-bottom:15px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgb20"</td>
+                 <td>margin-bottom:20px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgb25"</td>
+                 <td>margin-bottom:25px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgb30"</td>
+                 <td>margin-bottom:30px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgb35"</td>
+                 <td>margin-bottom:35px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgb40"</td>
+                 <td>margin-bottom:40px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgb50"</td>
+                 <td>margin-bottom:50px;</td>
+             </tr>
+        </table>
+        <table>
+            <colgroup>
+                <col style="width: 50%;">
+                <col style="width: 50%;">
+            </colgroup>
+            <tr>
+                <th colspan="2" class="alignL">margin-right</th>
+            </tr>
+             <tr>
+                 <td>class="mgr0"</td>
+                 <td>margin-right:0px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgr5"</td>
+                 <td>margin-right:5px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgr10"</td>
+                 <td>margin-right:10px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgr15"</td>
+                 <td>margin-right:15px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgr20"</td>
+                 <td>margin-right:20px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgr25"</td>
+                 <td>margin-right:25px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgr30"</td>
+                 <td>margin-right:30px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgr35"</td>
+                 <td>margin-right:35px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgr40"</td>
+                 <td>margin-right:40px;</td>
+             </tr>
+             <tr>
+                 <td>class="mgr50"</td>
+                 <td>margin-right:50px;</td>
+             </tr>
+        </table>
+    </div>
+    <div class="boxdiv clear margin">
+        <h2>Padding</h2>
+        <table>
+            <colgroup>
+                <col style="width: 50%;">
+                <col style="width: 50%;">
+            </colgroup>
+           <tr>
+               <th colspan="2" class="alignL">padding-top</th>
+           </tr>
+           <tr>
+               <td>class="pdt0"</td>
+               <td>padding-top:0px;</td>
+           </tr>
+           <tr>
+                <td>class="pdt5"</td>
+                <td>padding-top:5px;</td>
+            </tr>
+            <tr>
+                <td>class="pdt10"</td>
+                <td>padding-top:10px;</td>
+            </tr>
+            <tr>
+                <td>class="pdt15"</td>
+                <td>padding-top:15px;</td>
+            </tr>
+            <tr>
+                <td>class="pdt20"</td>
+                <td>padding-top:20px;</td>
+            </tr>
+            <tr>
+                <td>class="pdt25"</td>
+                <td>padding-top:25px;</td>
+            </tr>
+            <tr>
+                <td>class="pdt30"</td>
+                <td>padding-top:30px;</td>
+            </tr>
+            <tr>
+                <td>class="pdt35"</td>
+                <td>padding-top:35px;</td>
+            </tr>
+            <tr>
+                <td>class="pdt40"</td>
+                <td>padding-top:40px;</td>
+            </tr>
+            <tr>
+                <td>class="pdt50"</td>
+                <td>padding-top:50px;</td>
+            </tr>
+        </table>
+        <table>
+            <colgroup>
+                <col style="width: 50%;">
+                <col style="width: 50%;">
+            </colgroup>
+            <tr>
+                <th colspan="2" class="alignL">padding-left</th>
+            </tr>
+            <tr>
+                <td>class="pdl0"</td>
+                <td>padding-left:0px;</td>
+            </tr>
+            <tr>
+                <td>class="pdl5"</td>
+                <td>padding-left:5px;</td>
+            </tr>
+            <tr>
+                <td>class="pdl10"</td>
+                <td>padding-left:10px;</td>
+            </tr>
+            <tr>
+                <td>class="pdl15"</td>
+                <td>padding-left:15px;</td>
+            </tr>
+            <tr>
+                <td>class="pdl20"</td>
+                <td>padding-left:20px;</td>
+            </tr>
+            <tr>
+                <td>class="pdl25"</td>
+                <td>padding-left:25px;</td>
+            </tr>
+            <tr>
+                <td>class="pdl30"</td>
+                <td>padding-left:30px;</td>
+            </tr>
+            <tr>
+                <td>class="pdl35"</td>
+                <td>padding-left:35px;</td>
+            </tr>
+            <tr>
+                <td>class="pdl40"</td>
+                <td>padding-left:40px;</td>
+            </tr>
+            <tr>
+                <td>class="pdl50"</td>
+                <td>padding-left:50px;</td>
+            </tr>
+        </table>
+        <table>
+            <colgroup>
+                <col style="width: 50%;">
+                <col style="width: 50%;">
+            </colgroup>
+            <tr>
+                <th colspan="2" class="alignL">padding-bottom</th>
+            </tr>
+            <tr>
+                <td>class="pdb0"</td>
+                <td>padding-bottom:0px;</td>
+            </tr>
+            <tr>
+                 <td>class="pdb5"</td>
+                 <td>padding-bottom:5px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdb10"</td>
+                 <td>padding-bottom:10px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdb15"</td>
+                 <td>padding-bottom:15px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdb20"</td>
+                 <td>padding-bottom:20px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdb25"</td>
+                 <td>padding-bottom:25px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdb30"</td>
+                 <td>padding-bottom:30px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdb35"</td>
+                 <td>padding-bottom:35px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdb40"</td>
+                 <td>padding-bottom:40px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdb50"</td>
+                 <td>padding-bottom:50px;</td>
+             </tr>
+        </table>
+        <table>
+            <colgroup>
+                <col style="width: 50%;">
+                <col style="width: 50%;">
+            </colgroup>
+            <tr>
+                <th colspan="2" class="alignL">padding-right</th>
+            </tr>
+             <tr>
+                 <td>class="pdr0"</td>
+                 <td>padding-right:0px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdr5"</td>
+                 <td>padding-right:5px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdr10"</td>
+                 <td>padding-right:10px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdr15"</td>
+                 <td>padding-right:15px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdr20"</td>
+                 <td>padding-right:20px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdr25"</td>
+                 <td>padding-right:25px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdr30"</td>
+                 <td>padding-right:30px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdr35"</td>
+                 <td>padding-right:35px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdr40"</td>
+                 <td>padding-right:40px;</td>
+             </tr>
+             <tr>
+                 <td>class="pdr50"</td>
+                 <td>padding-right:50px;</td>
+             </tr>
+        </table>
+    </div>
+    <div class="boxdiv">
+        <h2>Width</h2>
+        <ul class="clear">
+            <li><p>- class="wdp100"</p><div class="wdp100 box"></div></li>
+            <li><p>- class="wdp95"</p><div class="wdp95 box"></div></li>
+            <li><p>- class="wdp90"</p><div class="wdp90 box"></div></li>
+            <li><p>- class="wdp85"</p><div class="wdp85 box"></div></li>
+            <li><p>- class="wdp80"</p><div class="wdp80 box"></div></li>
+            <li><p>- class="wdp75"</p><div class="wdp75 box"></div></li>
+            <li><p>- class="wdp70"</p><div class="wdp70 box"></div></li>
+            <li><p>- class="wdp65"</p><div class="wdp65 box"></div></li>
+            <li><p>- class="wdp60"</p><div class="wdp60 box"></div></li>
+            <li><p>- class="wdp55"</p><div class="wdp55 box"></div></li>
+            <li><p>- class="wdp50"</p><div class="wdp50 box"></div></li>
+            <li><p>- class="wdp45"</p><div class="wdp45 box"></div></li>
+            <li><p>- class="wdp40"</p><div class="wdp40 box"></div></li>
+            <li><p>- class="wdp35"</p><div class="wdp35 box"></div></li>
+            <li><p>- class="wdp30"</p><div class="wdp30 box"></div></li>
+            <li><p>- class="wdp25"</p><div class="wdp25 box"></div></li>
+            <li><p>- class="wdp20"</p><div class="wdp20 box"></div></li>
+            <li><p>- class="wdp15"</p><div class="wdp15 box"></div></li>
+            <li><p>- class="wdp10"</p><div class="wdp10 box"></div></li>
+            <li><p>- class="wdp5"</p><div class="wdp5 box"></div></li>
+            <li><p>- class="wdp0"</p><div class="wdp0 box"></div></li>
+            <li><p>- class="wd10"</p><div class="wd10 box"></div></li>
+            <li><p>- class="wd20"</p><div class="wd20 box"></div></li>
+            <li><p>- class="wd30"</p><div class="wd30 box"></div></li>
+            <li><p>- class="wd40"</p><div class="wd40 box"></div></li>
+            <li><p>- class="wd50"</p><div class="wd50 box"></div></li>
+            <li><p>- class="wd60"</p><div class="wd60 box"></div></li>
+            <li><p>- class="wd70"</p><div class="wd70 box"></div></li>
+            <li><p>- class="wd80"</p><div class="wd80 box"></div></li>
+            <li><p>- class="wd90"</p><div class="wd90 box"></div></li>
+            <li><p>- class="wd100"</p><div class="wd100 box"></div></li>
+            <li><p>- class="wd120"</p><div class="wd120 box"></div></li>
+            <li><p>- class="wd130"</p><div class="wd130 box"></div></li>
+            <li><p>- class="wd140"</p><div class="wd140 box"></div></li>
+            <li><p>- class="wd160"</p><div class="wd160 box"></div></li>
+            <li><p>- class="wd170"</p><div class="wd170 box"></div></li>
+            <li><p>- class="wd180"</p><div class="wd180 box"></div></li>
+            <li><p>- class="wd200"</p><div class="wd200 box"></div></li>
+            <li><p>- class="wd300"</p><div class="wd300 box"></div></li>
+            <li><p>- class="wd400"</p><div class="wd400 box"></div></li>
+            <li><p>- class="wd420"</p><div class="wd420 box"></div></li>
+            <li><p>- class="wd500"</p><div class="wd500 box"></div></li>
+            <li><p>- class="wd580"</p><div class="wd580 box"></div></li>
+            <li><p>- class="wd1057"</p><div class="wd1057 box"></div></li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>Height</h2>
+        <ul class="clear">
+            <li><p>- class="ht10"</p><div class="ht10 box"></div></li>
+            <li><p>- class="ht15"</p><div class="ht15 box"></div></li>
+            <li><p>- class="ht20"</p><div class="ht20 box"></div></li>
+            <li><p>- class="ht25"</p><div class="ht25 box"></div></li>
+            <li><p>- class="ht30"</p><div class="ht30 box"></div></li>
+            <li><p>- class="ht35"</p><div class="ht35 box"></div></li>
+            <li><p>- class="ht40"</p><div class="ht40 box"></div></li>
+            <li><p>- class="ht45"</p><div class="ht45 box"></div></li>
+            <li><p>- class="ht50"</p><div class="ht50 box"></div></li>
+            <li><p>- class="ht55"</p><div class="ht55 box"></div></li>
+            <li><p>- class="ht60"</p><div class="ht60 box"></div></li>
+            <li><p>- class="ht65"</p><div class="ht65 box"></div></li>
+            <li><p>- class="ht70"</p><div class="ht70 box"></div></li>
+            <li><p>- class="ht75"</p><div class="ht75 box"></div></li>
+            <li><p>- class="ht80"</p><div class="ht80 box"></div></li>
+            <li><p>- class="ht85"</p><div class="ht85 box"></div></li>
+            <li><p>- class="ht90"</p><div class="ht90 box"></div></li>
+            <li><p>- class="ht95"</p><div class="ht95 box"></div></li>
+            <li><p>- class="ht100"</p><div class="ht100 box"></div></li>
+            <li><p>- class="ht150"</p><div class="ht150 box"></div></li>
+            <li><p>- class="ht200"</p><div class="ht200 box"></div></li>
+            <li><p>- class="ht233"</p><div class="ht233 box"></div></li>
+            <li><p>- class="ht250"</p><div class="ht250 box"></div></li>
+            <li><p>- class="ht300"</p><div class="ht300 box"></div></li>
+            <li><p>- class="ht350"</p><div class="ht350 box"></div></li>
+            <li><p>- class="ht400"</p><div class="ht400 box"></div></li>
+            <li><p>- class="ht450"</p><div class="ht450 box"></div></li>
+            <li><p>- class="ht500"</p><div class="ht500 box"></div></li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>Align</h2>
+        <ul class="clear">
+            <li><p>- class="alignC"</p><div class="alignC boxdiv">abcdefghi</div></li>
+            <li><p>- class="alignL"</p><div class="alignL boxdiv">abcdefghi</div></li>
+            <li><p>- class="alignR"</p><div class="alignR boxdiv">abcdefghi</div></li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>Flex</h2>
+        <ul class="clear">
+            <li>
+                <p>- class="flex"</p>
+                <div class="flex boxdiv">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+            </li>
+            <li>
+                <p>- class="flexbetween"</p>
+                <div class="flex flexbetween boxdiv">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+            </li>
+            <li>
+                <p>- class="flexcenter"</p>
+                <div class="flex flexcenter boxdiv">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+            </li>
+            <li>
+                <p>- class="flexend"</p>
+                <div class="flex flexend boxdiv">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+            </li>
+            <li>
+                <p>- class="flexitemcenter"</p>
+                <div class="flex flexitemcenter boxdiv">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>Button</h2>
+        <ul>
+            <li><p>- class="btnType1" (신청목록 - 검색)</p><input type="submit" class="btnType1" value="버튼1"></li>
+            <li><p>- class="btnType2" (신청목록 - 초기화)</p><input type="submit" class="btnType2" value="버튼2"></li>
+            <li><p>- class="btnType3" (popup - 검색)</p><input type="submit" class="btnType3" value="버튼3"></li>
+            <li><p>- class="btnType4" (신청목록 - 테이블 관련 버튼)</p><input type="submit" class="btnType4" value="버튼4"></li>
+            <li><p>- class="btnType5"</p><input type="submit" class="btnType5" value="버튼5"></li>
+            <li><p>- class="btnType6" (검색영역 키워드 +,- 버튼)</p><input type="submit" class="btnType6" value="+"> <input type="submit" class="btnType6" value="-"></li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>TitleType</h2>
+        <ul>
+            <li><p>- class="titleType1"</p><h3 class="titleType1">titleType1</h3></li>
+            <li><p>- class="titleType2"</p><h3 class="titleType2">titleType2</h3></li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>SelectType</h2>
+        <ul>
+            <li><p>- class="selectType1"</p>
+                <select class="selectType1"> 
+                    <option>option1</option>
+                    <option>option2</option>
+                    <option>option3</option>
+                </select>
+                <div class="selectType1 wd170">
+                    <select id="select1">
+                        <option selected>경기도 전체</option>
+                        <option>가평군</option>
+                        <option>김포시</option>
+                        <option>광주시</option>
+                    </select>
+                    <label for="select1">경기도 전체</label>
+                    <ul class="optBox">
+                        <li><a href="#" title="경기도 전체">경기도 전체</a></li>
+                        <li><a href="#" title="가평군">가평군</a></li>
+                        <li><a href="#" title="김포시">김포시</a></li>
+                        <li><a href="#" title="광주시">광주시</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><p>- class="selectType2"</p>
+                <select class="selectType2"> 
+                    <option>option1</option>
+                    <option>option2</option>
+                    <option>option3</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>InputtextType</h2>
+        <ul>
+            <li><p>- class="inputtextType1"</p><input type="text" class="inputtextType1" placeholder="inputtextType1"></li>
+            <li><p>- class="inputtextType2"</p><input type="text" class="inputtextType2" placeholder="inputtextType2"></li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>RadioType</h2>
+        <ul>
+            <li><p>- class="radioType1"</p><input id="radio" type="radio" class="radioType1" placeholder="radioType1"><label for="radio"><span class="radio"></span></label></li>
+            <li><p>- class="radioType1"</p><input id="radio2" type="radio" class="radioType2" placeholder="radioType1"><label for="radio2"><span class="radio"></span></label></li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>CheckboxType</h2>
+        <ul>
+            <li>
+                <p>- class="checkboxType1"</p>
+                <input type="checkbox" class="checkboxType1" id="checkboxType1">
+                <label for="checkboxType1"><span class="chkbox"></span>checkboxType2</label>
+            <li>
+                <p>- class="checkboxType2"</p>
+                <input type="checkbox" class="checkboxType2" id="checkboxType2">
+                <label for="checkboxType2"><span class="chkbox"></span>checkboxType2</label>
+            </li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>DisableBg</h2>
+        <ul>
+            <li>
+                <p>- class="disableBg"</p>
+                <input type="text" disabled class="inputtextType1 disableBg" value="disabled"><br>
+                <input type="checkbox" disabled class="disableBg" value="disabled">
+            </li>
+            <li>
+                <p>- class="checkboxType1"</p>
+                <input type="checkbox" class="checkboxType1" id="checkboxType1" disabled>
+                <label for="checkboxType1"><span class="chkbox"></span>checkboxType2</label>
+            </li>
+            <li>
+                <p>- class="checkboxType2"</p>
+                <input type="checkbox" class="checkboxType2" id="checkboxType2" disabled checked>
+                <label for="checkboxType2"><span class="chkbox"></span>checkboxType2</label>
+            </li>
+            <li><p>- class="radioType1"</p><input id="radio" type="radio" class="radioType1" placeholder="radioType1" disabled><label for="radio"><span class="radio"></span></label></li>
+            <li><p>- class="radioType1"</p><input id="radio2" type="radio" class="radioType2" placeholder="radioType1" disabled checked><label for="radio2"><span class="radio"></span></label></li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>CalendarType</h2>
+        <ul>
+            <li>
+                <p>- class="calendarType1"</p>
+                <div class="calendarType1">
+                    <input class="datepicker" type="text" placeholder="YYYY-MM-DD">
+                </div>
+            </li>
+            <li>
+                <p>- class="calendarType2"</p>
+                <div class="calendarType2">
+                    <input class="datepicker" type="text" placeholder="YYYY-MM-DD">
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="boxdiv">
+        <h2>TextAreaType</h2>
+        <ul>
+            <li>
+                <p>- class="textAreaType1"</p>
+                <textarea class="textAreaType1" placeholder="textAreaType1"></textarea>
+            </li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>borderBox, normalBox</h2>
+        <ul>
+            <li>
+                <p>- borderBox</p>
+                <div class="wd100 ht100 borderBox">
+                    <div class="wdp100 colorBg2" style="height: 100%; opacity: 0.1;"></div>
+                </div>
+            </li>
+            <li>
+                <p>- borderBox2</p>
+                <div class="wd100 ht100 borderBox2">
+                    <div class="wdp100 colorBg2" style="height: 100%; opacity: 0.1;"></div>
+                </div>
+            </li>
+            <li>
+                <p>- borderBox3</p>
+                <div class="wd100 ht100 borderBox3">
+                    <div class="wdp100 colorBg2" style="height: 100%; opacity: 0.1;"></div>
+                </div>
+            </li>
+            <li>
+                <p>- normalBox</p>
+                <div class="wd100 ht100 normalBox">
+                    <div class="wdp100 colorBg2" style="height: 100%; opacity: 0.1;"></div>
+                </div>
+            </li>
+            <li>
+                <p>- borderBox2</p>
+                <div class="wd100 ht100 normalBox2">
+                    <div class="wdp100 colorBg2" style="height: 100%; opacity: 0.1;"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>TableType</h2>
+        <ul>
+            <li>
+                <p>- class="tableType1"</p>
+                <div class="tableW">
+                    <table class="tableType1">
+                        <thead>
+                            <tr>
+                                <th>th</th>
+                                <th>th</th>
+                                <th>th</th>
+                                <th>th</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>td</td>
+                                <td>td</td>
+                                <td>td</td>
+                                <td>td</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>- class="tableType1 hover"</p>
+                    <table class="tableType1 hover">
+                        <thead>
+                            <tr>
+                                <th>th</th>
+                                <th>th</th>
+                                <th>th</th>
+                                <th>th</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>td</td>
+                                <td>td</td>
+                                <td>td</td>
+                                <td>td</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <p>- class="tableType2"</p>
+                <div class="tableW">
+                    <table class="tableType2">
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <p>- class="tableType3"</p>
+                <div class="tableW">
+                    <table class="tableType3">
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <p>- class="tableType4"</p>
+                <div class="tableW">
+                    <table class="tableType4">
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                        <tr>
+                            <th>th</th>
+                            <td>td</td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="boxdiv">
+        <h2>loadingBar</h2>
+        <ul>
+            <li>
+                <p>- class="ldBar" data-value="50"</p>
+
+                <div class="ldBarW">
+                    <div class="ldBar color3" data-value="50"></div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+    <div class="themeBtnW">
+        <a class="themeBtn darkBtn" href="#" title="다크모드 보기"><img src="images/icon/dark.png"><span>다크모드 보기</span></a>
+        <a class="themeBtn lightBtn" href="#" title="라이트모드 보기"><img src="images/icon/light.png"><span>라이트모드 보기</span></a>
+    </div>
+</body>
+</html>
