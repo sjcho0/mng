@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+<html lang="ko" >
+<head>
+	<!--  -->
+<title>OpenAPI 테스트</title>
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+	<link rel="shortcut icon" href="images/favicon/favicon.ico">
+	<link rel="stylesheet" href="jqgrid/css/ui.jqgrid.min.css">
+	<link type="text/css" rel="stylesheet" href="style/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="style/css/common.css">
+    <link type="text/css" rel="stylesheet" href="style/css/content.css">
+    <link type="text/css" rel="stylesheet" href="style/css/layout.css">
+    <link type="text/css" rel="stylesheet" href="style/css/login.css">
+    <link type="text/css" rel="stylesheet" href="style/css/loading-bar.css">
+    <link type="text/css" rel="stylesheet" href="style/css/popup.css">
+    <link type="text/css" rel="stylesheet" href="style/css/grid.css">
+    <link type="text/css" rel="stylesheet" href="style/css/plugin/jquery.mCustomScrollbar.css">
+    <link type="text/css" rel="stylesheet" href="style/css/plugin/timepicker.css">
+	<link rel="stylesheet" href="jquery-ui-1.13.0.base/jquery-ui.min.css">
+	<link rel="stylesheet" href="js/plugin/jquery-ui-1.13.0.custom/jquery-ui-1.13.0.custom/jquery-ui.min.css">
+
+	<script src="js/plugin/jquery-3.6.3.min.js"></script>
+    <script src="js/plugin/jquery.dotdotdot.js"></script>
+    <script src="js/plugin/jquery.mCustomScrollbar.min.js"></script>
+    <script src="js/plugin/jquery-ui-1.13.0.custom/jquery-ui-1.13.0.custom/jquery-ui.min.js"></script>
+    <script src="js/plugin/datepicker-ko.js"></script>
+    <script src="js/plugin/loading-bar.js"></script>
+    <script src="js/plugin/jquery.preloaders.min.js"></script>
+    <script src="js/jquery.serializeObject.min.js"></script>
+    <script src="jqgrid/i18n/grid.locale-kr.js"></script>
+    <script src="jqgrid/jquery.jqgrid.min.js"></script>
+    <script src="js/common.js?ver=202211171858"></script>
+    <script src="js/timer.js?ver=202211231858"></script>
+
+</head>
+<body>
+	<div id="divWrapper" class="onsnb">
+	    <div id="divSnb">
+
+<h1 class="logo"><a href="/main.do" title="경기도사이버"><img class="light" src="images/logo.png" alt="경기도사이버도서관 로고 light"><img class="dark" src="images/logo_dark.png" alt="경기도사이버도서관 로고 dark"></a></h1>
+<div class="manager">
+   <!--  <div class="profileImg">
+    <img src="">
+    <span class="state"></span>
+</div> -->
+	<span class="name">&#54504;&#52432;&#45572;&#47532;</span>
+	<span class="tail"> 님</span>
+	<br>
+	<a class="viewBtn" id="getMyInfo" href="#"><img src="images/moreBtn.png" alt="회원정보더보기"></a>
+	<p class="mngect">
+			최종로그인시간<br>
+	   		2024.01.19 16:03:37<br>
+	(211&#46;52&#46;144&#46;131)
+	<p>
+	</div>
+<div class="navigationW">
+	<ul class="navigation">
+    	<li class="nodepth2" id="O_M0100000">
+	       		<a href="#" title="통합관제">
+							<span class="imgW">
+	                   			<img class="off" src="images/snbIcon1.png" alt="통합관제">
+	                   			<img class="on" src="images/snbIcon1_over.png" alt="통합관제">
+	              				</span>
+	              				<span class="title">통합관제</span>
+	              				</a>
+					<div class="depth2W">
+					<p>통합관제</p> 
+					<ul class="depth2">
+						<li id="l_M0101000">
+									<a href="/combi/dailyHvstView.do" onclick="return chkAuth('M0101000');">일일수집 데이터 현황</a>
+							</li>
+        			<li id="l_M0102000">
+									<a href="/combi/hvstreq/harvestReq.do" onclick="return chkAuth('M0102000');">수집 요청 관리</a>
+							</li>
+        			<li id="l_M0103000">
+									<a href="/combi/listHvstApi.do" onclick="return chkAuth('M0103000');">수집API 관리</a>
+							</li>
+        			<li id="l_M0104000">
+									<a href="/combi/listCenter.do" onclick="return chkAuth('M0104000');">센터 관리</a>
+							</li>
+        			</ul>
+       			</li>
+       	<li class="nodepth2" id="O_M0200000">
+	       		<a href="#" title="서지관리">
+							<span class="imgW">
+	                   			<img class="off" src="images/snbIcon2.png" alt="서지관리">
+	                   			<img class="on" src="images/snbIcon2_over.png" alt="서지관리">
+	              				</span>
+	              				<span class="title">서지관리</span>
+	              				</a>
+					<div class="depth2W">
+					<p>서지관리</p> 
+					<ul class="depth2">
+						<li id="l_M0201000">
+									<a href="/book/listBookData.do" onclick="return chkAuth('M0201000');">서지자료관리</a>
+							</li>
+        			<li id="l_M0202000">
+									<a href="/book/listDataOnly.do" onclick="return chkAuth('M0202000');">미소장서지관리</a>
+							</li>
+        			</ul>
+       			</li>
+       	<li class="nodepth2" id="O_M0300000">
+	       		<a href="#" title="소장관리">
+							<span class="imgW">
+	                   			<img class="off" src="images/snbIcon3.png" alt="소장관리">
+	                   			<img class="on" src="images/snbIcon3_over.png" alt="소장관리">
+	              				</span>
+	              				<span class="title">소장관리</span>
+	              				</a>
+					<div class="depth2W">
+					<p>소장관리</p> 
+					<ul class="depth2">
+						<li id="l_M0301000">
+									<a href="/keep/listAccession.do" onclick="return chkAuth('M0301000');">소장자료관리</a>
+							</li>
+        			<li id="l_M0302000">
+									<a href="/keep/listNoData.do" onclick="return chkAuth('M0302000');">미서지소장자료관리</a>
+							</li>
+        			<li id="l_M0303000">
+									<a href="/keep/listCheckinout.do" onclick="return chkAuth('M0303000');">대출/반납자료관리</a>
+							</li>
+        			<li id="l_M0305000">
+									<a href="/keep/listRemoveBooks.do" onclick="return chkAuth('M0305000');">제적자료관리</a>
+							</li>
+        			</ul>
+       			</li>
+       	<li class="nodepth2" id="O_M0400000">
+	       		<a href="#" title="예약관리">
+							<span class="imgW">
+	                   			<img class="off" src="images/snbIcon4.png" alt="예약관리">
+	                   			<img class="on" src="images/snbIcon4_over.png" alt="예약관리">
+	              				</span>
+	              				<span class="title">예약관리</span>
+	              				</a>
+					<div class="depth2W">
+					<p>예약관리</p> 
+					<ul class="depth2">
+						<li id="l_M0401000">
+									<a href="/reserv/listReserv.do" onclick="return chkAuth('M0401000');">예약자료관리</a>
+							</li>
+        			<li id="l_M0402000">
+									<a href="/reserv/listReservHist.do" onclick="return chkAuth('M0402000');">예약이력관리</a>
+							</li>
+        			</ul>
+       			</li>
+       	<li class="nodepth2" id="O_M0600000">
+	       		<a href="#" title="통계">
+							<span class="imgW">
+	                   			<img class="off" src="images/snbIcon5.png" alt="통계">
+	                   			<img class="on" src="images/snbIcon5_over.png" alt="통계">
+	              				</span>
+	              				<span class="title">통계</span>
+	              				</a>
+					<div class="depth2W">
+					<p>통계</p> 
+					<ul class="depth2">
+						<li id="l_M0601000">
+									<a href="/stat/possView.do" onclick="return chkAuth('M0601000');">장서보유현황</a>
+							</li>
+        			<li id="l_M0602000">
+									<a href="/stat/checkinoutView.do" onclick="return chkAuth('M0602000');">대출/반납현황</a>
+							</li>
+        			<li id="l_M0603000">
+									<a href="/stat/dailyHvstView.do" onclick="return chkAuth('M0603000');">일일데이터수집현황</a>
+							</li>
+        			<li id="l_M0604000">
+									<a href="/stat/popkeywordsView.do" onclick="return chkAuth('M0604000');">인기검색어</a>
+							</li>
+        			<li id="l_M0605000">
+									<a href="/stat/popRank/loanView.do" onclick="return chkAuth('M0605000');">도서대출순위</a>
+							</li>
+        			<li id="l_M0606000">
+									<a href="/stat/popRank/resvView.do" onclick="return chkAuth('M0606000');">도서예약순위</a>
+							</li>
+        			<li id="l_M0607000">
+									<a href="/stat/popRank/ilLoanView.do" onclick="return chkAuth('M0607000');">도서상호대차순위</a>
+							</li>
+        			</ul>
+       			</li>
+       	<li class="nodepth2" id="O_M0700000">
+	       		<a href="#" title="도서관관리">
+							<span class="imgW">
+	                   			<img class="off" src="images/snbIcon6.png" alt="도서관관리">
+	                   			<img class="on" src="images/snbIcon6_over.png" alt="도서관관리">
+	              				</span>
+	              				<span class="title">도서관관리</span>
+	              				</a>
+					<div class="depth2W">
+					<p>도서관관리</p> 
+					<ul class="depth2">
+						<li id="l_M0701000">
+									<a href="/libmng/listLib.do" onclick="return chkAuth('M0701000');">도서관관리</a>
+							</li>
+        			<li id="l_M0702000">
+									<a href="/libmng/listLibCode.do" onclick="return chkAuth('M0702000');">도서관코드관리</a>
+							</li>
+        			<li id="l_M0703000">
+									<a href="/libmng/listLimit.do" onclick="return chkAuth('M0703000');">이용제한 코드관리</a>
+							</li>
+        			</ul>
+       			</li>
+       	<li class="nodepth2" id="O_M0800000">
+	       		<a href="#" title="시스템관리">
+							<span class="imgW">
+	                   			<img class="off" src="images/snbIcon7.png" alt="시스템관리">
+	                   			<img class="on" src="images/snbIcon7_over.png" alt="시스템관리">
+	              				</span>
+	              				<span class="title">시스템관리</span>
+	              				</a>
+					<div class="depth2W">
+					<p>시스템관리</p> 
+					<ul class="depth2">
+						<li id="l_M0801000">
+									<a href="/system/listManager.do" onclick="return chkAuth('M0801000');">사용자관리</a>
+							</li>
+        			<li id="l_M0802000">
+									<a href="/system/listMenuAuth.do" onclick="return chkAuth('M0802000');">메뉴권한관리</a>
+							</li>
+        			<li id="l_M0803000">
+									<a href="/system/listCode.do" onclick="return chkAuth('M0803000');">코드관리</a>
+							</li>
+        			<li id="l_M0804000">
+									<a href="/system/listCodeType.do" onclick="return chkAuth('M0804000');">코드유형 관리</a>
+							</li>
+        			<li id="l_M0805000">
+									<a href="/system/listIPRestrict.do" onclick="return chkAuth('M0805000');">IP접근제한관리</a>
+							</li>
+        			<li>
+									<a href="#" title="이력관리"><span class="title">이력관리</span></a>
+							<ul class="depth3">
+        					<li id="l_M0806010"><a href="/system/listLoginHist.do" onclick="return chkAuth('M0806010');">로그인이력</a></li>
+        					<li id="l_M0806020"><a href="/system/listPersonalInfoHist.do" onclick="return chkAuth('M0806020');">개인정보접근이력</a></li>
+        					<li id="l_M0806030"><a href="/system/listMenuViewHist.do" onclick="return chkAuth('M0806030');">메뉴접근이력</a></li>
+        					</ul>
+        				</li>
+        			</ul>
+       			</li>
+       	<li class="nodepth2" id="O_M0900000">
+	       		<a href="#" title="OpenAPI">
+							<span class="imgW">
+	                   			<img class="off" src="images/snbIcon8.png" alt="OpenAPI">
+	                   			<img class="on" src="images/snbIcon8_over.png" alt="OpenAPI">
+	              				</span>
+	              				<span class="title">OpenAPI</span>
+	              				</a>
+					<div class="depth2W">
+					<p>OpenAPI</p> 
+					<ul class="depth2">
+						<li id="l_M0901000">
+									<a href="/openAPI/listApi.do" onclick="return chkAuth('M0901000');">OpenAPI 관리</a>
+							</li>
+        			<li id="l_M0902000">
+									<a href="/openAPIApp/listApiApp.do" onclick="return chkAuth('M0902000');">OpenAPI 신청관리</a>
+							</li>
+        			<li id="l_M0903000">
+									<a href="/openAPIApp/listApiServiceList.do" onclick="return chkAuth('M0903000');">OpenAPI 서비스관리</a>
+							</li>
+        			<li id="l_M0904000">
+									<a href="/openAPIApp/openApiTest.do" onclick="return chkAuth('M0904000');">OpenAPI 테스트</a>
+							</li>
+        			<li>
+									<a href="#" title="OPENAPI 통계"><span class="title">OPENAPI 통계</span></a>
+							<ul class="depth3">
+        					<li id="l_M0905010"><a href="/openAPI/statUse.do" onclick="return chkAuth('M0905010');">OPENAPI 신청통계</a></li>
+        					<li id="l_M0905020"><a href="/openAPI/statReq.do" onclick="return chkAuth('M0905020');">OPENAPI 이용통계</a></li>
+        					</ul>
+        				</li>
+        			</ul>
+       			</li>
+       	</ul>
+</div></div>
+		<div id="divContents">
+			<!-- //nav -->
+			<div id="divContent">
+			 	<div class="contentTop">
+				<div class="left">
+					<a class="snbBtn" href="#"> <img class="open light"
+						src="images/snb_open.png" alt="메뉴키우기 light"> <img class="close light"
+						src="images/snb_close.png" alt="메뉴줄이기 light"> <img class="open dark"
+						src="images/snb_open_dark.png" alt="메뉴키우기 dark"> <img class="close dark"
+						src="images/snb_close_dark.png" alt="메뉴줄이기 dark">
+					</a>
+					<div class="pageW">
+						<h2 class="pageName">OpenAPI 테스트</h2>
+						</div>
+				</div>
+				
+				<div class="right flexitemcenter">
+					<span id="counter" class="titleType1 wd80 "></span>
+					<div class="logout">
+						<a href="#" title="로그아웃" class="logoutBtn">
+							<img src="images/logOut.png" alt="">
+						</a>
+					</div>
+					<br>
+					<div class="alarmW">
+						<a class="alarmBtn" href="#" title="알람"><img
+							src="images/alarm.png" alt=""><span class="state"></span></a>
+					</div>
+				</div>
+			</div>
+
+<!-- //header -->
+				<script>
+$(function() {
+	$("#btnAdd").click(function(e) {
+		
+		if($("[name = 'selectedAttr']:first").find("option").length == $("[name = 'selectedAttr']").length) {
+			return false;
+		}
+		
+		var elementToCopy = document.getElementsByName("attributeRow")[$("[name = selectedAttr]").length - 1];
+		var copiedElement = elementToCopy.cloneNode(true);
+
+		var valueArr = $("[name = selectedAttr]").find("option:selected").toArray();
+		$(copiedElement).find("option").each((index, element) => {
+			if(!valueArr.find(x => x.value == element.value)){
+				$(element).prop('selected', true);
+				$(copiedElement).find('td:eq(1)').find("input").val('')
+				return false;
+			} 
+		})
+		
+		var destinationElement = document.getElementsByName("attributeRow")[document.getElementsByName("attributeRow").length - 1];
+		destinationElement.parentNode.insertBefore(copiedElement, destinationElement.nextSibling);
+	})
+	
+	$('[name = "urlRow"]').change(() => {
+		$.ajax({
+			url: '/openAPIApp/getParamForOpenAPI.do?id=' + $(':selected')[0].id,
+			type: 'GET'
+		}).done(function(result) { //
+		    if(result.RESULT == 1){
+		    	selectElement = $("[name='selectedAttr']")[0]
+		    	while (selectElement.options.length > 0) {
+		    	    selectElement.remove(0);
+		    	}
+		    	var count = $("[name='attributeRow']").length;
+		    	for(i = 0; i < count; i++) {
+		    	    if(i == 0) {
+		    	        continue;
+		    	    }
+		    	    $("[name='attributeRow']")[1].remove()
+		    	}
+		    	for (var i = 0; i < result.PARAMS.length; i++){
+		    		var newOption = document.createElement("option");
+		    		newOption.value = result.PARAMS[i].cd;
+		    		newOption.text = result.PARAMS[i].cdNm;
+		    		selectElement.add(newOption);
+		    	}
+		    }
+		}).fail(function(result) {
+			alert("처리중 오류가 발생하였습니다.");
+		});
+		}
+	)
+	
+	$("#btnSearch").click(function(e) {
+		
+		var param = {};
+		param['url'] = $('select option:selected').attr('id');
+		param['method'] = $('select option:selected').val();
+		var selectedOptions = $("[name = selectedAttr]").find("option:selected").toArray();
+		$("[name = searchKey]").each((index, elem) =>{
+		    param[selectedOptions[index].text] = elem.value;
+		})
+		$.ajax({
+			url: '/openAPIApp/getTestResponseOpenAPI.do',
+			type: 'GET',
+			data: param,
+		}).done(function(result) { //
+		    if(result.RESULT == 1){
+		    	$('#result').html(JSON.stringify(result.CONTENT, null, 2));
+		    }
+		}).fail(function(result) {
+			alert("처리중 오류가 발생하였습니다.");
+		});
+		
+	})
+	$("#result").width($(".searchBox1").width() - 100);
+	$("#result").height(500)
+
+	$(window).bind('resize', function() {
+			$("#result").width($(".searchBox1").width() - 100)
+	}).trigger('resize');
+})
+
+function btnRemove(btn) {
+	if($("[name='btnRemove']").length > 1){
+		btn.parentNode.parentNode.remove()
+	}
+}
+
+function clickSelect(btn, event) {
+
+    $("option").each((opIndex, opElem) => {
+        $(opElem).show()
+    })
+    
+    $("[name = selectedAttr]").find("option:selected").each((index, elem) => {
+        $(btn).find("option").filter("[value = '" + elem.value + "']").each((i,e) => {
+            $(e).hide()
+        }) 
+    })
+}
+
+</script>
+
+<div class="popupType1" style="display: block;">
+	<div class="popupCont2 Scroll1">
+		<div class="searchBox1">
+		   	<div class="searchContentW">
+				<div class="searchContentBox">
+					<div class="showBox">
+						<ul class="columnList2">
+			   				<span class='wd100'>OpenAPI 명</span>
+			   				<li class="wdp22">
+			   					<select name = "urlRow" class="selectType1 wdp100" title="OpenAPI 명">
+			    					<option id="/api/ggunion/open/catalog/searchList" value = "GET">서지목록 조회</option>
+											<option id="/api/ggunion/open/book/searchList" value = "GET">소장목록 조회</option>
+											<option id="/api/ggunion/open/book/searchRealTime" value = "POST">실시간 상태조회</option>
+											</select>
+			   				</li>
+			   			</ul>
+		   			</div> 
+		   		</div> 
+		   		<div class="searchBtnBox">
+					<div>
+						<input id="btnSearch" class="btnType1" type="button" value="검색">
+						<input class="btnType2" name="btnReset" id="btnReset" type="reset" value="초기화">
+					</div>
+				</div>
+			</div> 
+		</div> 
+		<div class="borderBox">
+			<table id = "attributeTable" class="tableType2">
+				<tr>
+  					<th>Key</th>
+  					<th>Value</th>
+  					<th>Delete</th>
+  				</tr>
+	    		<tr name = "attributeRow">			
+					<td>
+						<select name = "selectedAttr" onclick="clickSelect(this, event)" class="selectType1 wdp100">	
+							<option value="0100">keyword</option>
+									<option value="0200">title_search</option>
+									<option value="0300">title_search_n</option>
+									<option value="0400">author_search</option>
+									<option value="0500">author_search_n</option>
+									<option value="0600">publisher_search</option>
+									<option value="0700">publisher_search_n</option>
+									<option value="0800">publisher_year</option>
+									<option value="0900">isbn</option>
+									<option value="1000">use_limit_code</option>
+									<option value="1100">duru_lib_nos</option>
+									<option value="1200">duru_jiyuk</option>
+									<option value="1300">duruex_lib_nos</option>
+									<option value="1400">duruex_jiyuk</option>
+									<option value="1500">abbr_id</option>
+									<option value="1600">class_no</option>
+									<option value="1700">sort</option>
+									</select>
+					</td>			
+					<td>
+						<input type="text" name = "searchKey" class="inputtextType1 wdp100" />
+					</td>			
+					<td align="center" class = "wdp10">
+					 	<a onclick = "btnRemove(this)" name = "btnRemove" class="btnType5" href="#" title="삭제">삭제</a>
+					</td> 
+				</tr>
+			</table>
+		</div>
+		<div >
+			<ul class="btnList2">
+                <li><a id="btnAdd"class="btnType1" href="#" title="추가">추가</a></li>
+            </ul>
+        </div> 
+		
+		<div class="borderBox">
+			<span class='mgt40 wd100'>조회 결과</span>
+			<div>
+				<textarea class="resultTextArea" id = 'result'> </textarea>
+			</div>
+		</div>
+	</div> 
+</div>
+<div class="popupW">
+	<style>
+
+.excelpopup{display:none}
+.progressPopup{display:none}
+
+</style>
+<div id="divPopup">
+		<div class="blackBg" ></div>
+		<div class="popupType1 wdp20 popup excelpopup">
+			<div class="popupTop">
+				<h3 class="popupTit">엑셀출력</h3>
+			</div>
+			<div class="popupCont2 Scroll1 mht500">
+				<div class="borderBox2">
+					<div id="exDiv1">
+						<input type="checkbox" id="pchk1_1" name="pExcel" value="C"><label
+							for="pchk1_1"><span class="chkbox"></span>선택항목</label>
+					</div>
+					<div id="exDiv2">
+						<input type="checkbox" id="pchk1_2" name="pExcel" value="A"><label
+							for="pchk1_2"><span class="chkbox"></span>검색목록전체</label>
+					</div>
+				</div>
+				<ul class="btnList2">
+					<li><a class="btnType5 okbtn" href="#" title="선택">선택</a></li>
+					<li><a class="btnType5 cancelbtn" href="#" title="닫기">닫기</a></li>
+				</ul>
+			</div>
+			<a class="closeBtn" href="#" title="팝업 닫기"><img class="light"
+				src="images/close.png" alt="닫기 light"><img class="dark"
+				src="images/close_dark.png" alt="닫기 dark"></a>
+		</div>
+
+		<div class="popupType1 popup wdp20  logoutPopup">
+			<div class="popupTop">
+				<h3 class="popupTit">로그아웃 알림</h3>
+			</div>
+			<div class="popupCont2 Scroll1 mht500 alignC ">
+				<div class="borderBox2 ht35 pdt10">
+					<span id="ncounter"></span> 초 후 자동 로그아웃 됩니다. <br>
+				</div>
+				<ul class="btnList2">
+					<li><a class="btnType5 extendBtn" href="#" title="연장하기">연장하기</a></li>
+					<li><a class="btnType5 sLogoutBtn" href="#" title="로그아웃">로그아웃</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- 	<div class="popupType1 ldPop wdp20 popup progressPopup">
+		<div class="blackBg" style="display: block;"></div>
+		<div class="popupType1" style="display: block;">
+				<div class="popupbox">
+					<div class="popupCont">
+						<p class="message"></p>
+					</div>
+					<div class="ldBarW" style="width:100%">
+							<div id="prog1" style="width:100%"></div>
+					</div>
+				</div>
+		</div>
+	</div> -->
+<!-- </div> -->
+<div class="ldPop popup  progressPopup" style="display:none;">
+	<div class="popupbox">
+		<div class="popupCont">
+			<p class="message"></p>
+		</div>
+		<div class="ldBarW" style="width:100%">
+				<div id="prog1" style="width:100%"></div>
+			</div>
+	</div>
+</div>
+
+<div class="alarmPopupW popupType1">
+                    <div class="popupTop">
+                        <h3 class="popupTit"><span class="state"></span>알림</h3>
+                    </div>
+                    <div class="popupCont mht450">
+                            <ul class="alarmList">
+                            </ul>
+                    </div>
+                    <a class="closeBtn" href="#" title="팝업 닫기"><img class="light" src="images/close.png" alt="라이트모드로고"><img class="dark" src="images/close_dark.png" alt="다크모드로고"></a>
+                </div>
+</div>
+<!-- //contents -->
+			<!-- //right -->
+				<div class="themeBtnW">
+					<a class="themeBtn darkBtn" href="#" title="다크모드 보기"><img src="images/dark.png" alt="다크모드로고"><span>다크모드 보기</span></a>
+					<a class="themeBtn lightBtn" href="#" title="라이트모드 보기"><img src="images/light.png" alt="라이트모드로고"><span>라이트모드 보기</span></a>
+				</div>
+			</div>
+		 		<div id="divFooter">
+	<p>16258 경기도 수원시 팔달구신풍로 23번길 68(신풍동) Tel:031)252-5237
+		Fax:031)246-4021</p>
+	<p class="copyRight">Copyright ⓒGyeonggi-do Cyber Library. All
+		rights reserved.</p>
+</div><!-- //footer -->
+		</div>
+	</div>
+	<!-- //wrapper -->
+<script src="js/plugin/popup.js"></script>
+</body>
+</html>
