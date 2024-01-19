@@ -61,6 +61,15 @@ $(function(){
         return false;
     });
 
+	// --vh
+	function setScreenSize(){
+		let vh = window.innerHeight * 0.01;
+	  
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	}  
+	setScreenSize();
+	window.addEventListener('resize', () => setScreenSize());
+	
     // a태그 막기
     $(".noalink").on("click",function(e){
         e.preventDefault();
