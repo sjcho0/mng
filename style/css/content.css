@@ -40,6 +40,9 @@ html[data-dark=true] .searchBox1{color: #fff; background: #282828; border-color:
     .searchContentW .searchBtnBox{margin-top: 10px;}
 }
 
+/*  */
+.functionList{display: flex; flex-wrap: wrap; margin-bottom: 15px;}
+.functionList .fr{margin-left: auto;}
 
 
 .chartList{display: -webkit-box; display: -ms-flexbox; display: flex; margin-bottom: 20px;}
@@ -120,7 +123,7 @@ html[data-dark=true] .pagingW .paging a:hover{background-color: #2b3441;}
 #divPopup .blackBg{display: none; background-color: rgba(0, 0, 0, 0.2); width: 100%; height: 100%; position: fixed; left: 0; top: 0;}
 #divPopup .popupType1{position: fixed; min-width: 0px; width: 250px;  margin: 0 auto; left: 50%; top: 50%; transform: translate(-51.5%, -51.4%); border-radius: 12px; overflow: hidden; display: none;}
 
-#divPopup .popupType1 .popupTop{background-color: #e7ecf0; padding: 20px 15px 15px;}
+#divPopup .popupType1 .popupTop{background-color: #d9e1e7; padding: 20px 15px 15px;}
 #divPopup .popupType1 .popupTop .popupTit{font-family: PretendardB, sans-serif; font-size: 15px; color: #000000; line-height: 1.2em;}
 #divPopup .popupType1 .popupTop .popupTit .state{display: inline-block; width: 20px; height: 20px; border-radius: 50%; margin-right: 15px; vertical-align: bottom; background-color: #0090ff;}
 #divPopup .popupType1 .popupCont{background-color: #ffffff;}
@@ -137,7 +140,7 @@ html[data-dark=true] #divPopup .popupType1 .closeBtn .light{display: none;}
 html[data-dark=true] #divPopup .popupType1 .closeBtn .dark{display: inline-block;}
 /* 
 #divPopup .popupType2{position: fixed; min-width: 0px; width: 600px;  margin: 0 auto; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 12px; overflow: hidden; display: none;}
-#divPopup .popupType2 .popupTop{background-color: #e7ecf0; padding: 20px 15px 15px;}
+#divPopup .popupType2 .popupTop{background-color: #d9e1e7; padding: 20px 15px 15px;}
 #divPopup .popupType2 .popupTop .popupTit{font-family: PretendardB, sans-serif; font-size: 15px; color: #000000; line-height: 1.2em;}
 #divPopup .popupType2 .popupTop .popupTit .state{display: inline-block; width: 20px; height: 20px; border-radius: 50%; margin-right: 15px; vertical-align: bottom; background-color: #0090ff;}
 #divPopup .popupType2 .popupCont{background-color: #ffffff;}
@@ -155,7 +158,7 @@ html[data-dark=true] #divPopup .popupType2 .closeBtn .light{display: none;}
 html[data-dark=true] #divPopup .popupType2 .closeBtn .dark{display: inline-block;}
 
 #divPopup .popupType3{position: fixed; min-width: 0px; width: 100%; /*  margin: 0 auto; left: 50%; top: 50%; transform: translate(-51.5%, -51.4%); border-radius: 12px; display: none;*/ overflow: hidden;}
-#divPopup .popupType3 .popupTop{background-color: #e7ecf0; padding: 20px 15px 15px;}
+#divPopup .popupType3 .popupTop{background-color: #d9e1e7; padding: 20px 15px 15px;}
 #divPopup .popupType3 .popupTop .popupTit{font-family: PretendardB, sans-serif; font-size: 15px; color: #000000; line-height: 1.2em;}
 #divPopup .popupType3 .popupTop .popupTit .state{display: inline-block; width: 20px; height: 20px; border-radius: 50%; margin-right: 15px; vertical-align: bottom; background-color: #0090ff;}
 #divPopup .popupType3 .popupCont{background-color: #ffffff; height: auto;}
@@ -163,7 +166,7 @@ html[data-dark=true] #divPopup .popupType2 .closeBtn .dark{display: inline-block
 #divPopup .popupType3 .closeBtn{position: absolute; right: 14px; top: 20px;}
 #divPopup .popupType3 .closeBtn img{width: 10px;}
 #divPopup .popupType3 .closeBtn .dark{display: none;}
-#divPopup .popupType3 .popupBottom{background-color: #e7ecf0;}
+#divPopup .popupType3 .popupBottom{background-color: #d9e1e7;}
 html[data-dark=true] #divPopup .blackBg{background-color: rgba(0, 0, 0, 0.4);}
 html[data-dark=true] #divPopup .popupType3 .popupTop{background-color: #282828;}
 html[data-dark=true] #divPopup .popupType3 .popupTop .popupTit{color: #fefefe;}
@@ -178,7 +181,7 @@ html[data-dark=true] #divPopup .popupType3 .popupBottom{background-color: #28282
 #divPopup2 .blackBg{display: none; background-color: rgba(0, 0, 0, 0.2); width: 100%; height: 100%; position: fixed; left: 0; top: 0;}
 #divPopup2 .popupType1{position: fixed; min-width: 0px; width: 250px;  margin: 0 auto; left: 50%; top: 50%; transform: translate(-51.5%, -51.4%); border-radius: 12px; overflow: hidden; display: none;}
 
-#divPopup2 .popupType1 .popupTop{background-color: #e7ecf0; padding: 20px 15px 15px;}
+#divPopup2 .popupType1 .popupTop{background-color: #d9e1e7; padding: 20px 15px 15px;}
 #divPopup2 .popupType1 .popupTop .popupTit{font-family: PretendardB, sans-serif; font-size: 15px; color: #000000; line-height: 1.2em;}
 #divPopup2 .popupType1 .popupTop .popupTit .state{display: inline-block; width: 20px; height: 20px; border-radius: 50%; margin-right: 15px; vertical-align: bottom; background-color: #0090ff;}
 #divPopup2 .popupType1 .popupCont{background-color: #ffffff;}
@@ -195,26 +198,26 @@ html[data-dark=true] #divPopup2 .popupType1 .closeBtn .light{display: none;}
 html[data-dark=true] #divPopup2 .popupType1 .closeBtn .dark{display: inline-block;}
 
 .popupType2{width: 100%; height: calc(var(--vh, 1vh) * 100); overflow: hidden; display: none; position: relative;}
-.popupType2 .popupTop{background-color: #e7ecf0; padding: 20px 15px 15px; position: absolute; top: 0; left: 0; width: 100%; z-index: 1;}
+.popupType2 .popupTop{background-color: #d9e1e7; padding: 20px 15px 15px; position: absolute; top: 0; left: 0; width: 100%; z-index: 1;}
 .popupType2 .popupTop .popupTit{font-family: PretendardB, sans-serif; font-size: 15px; color: #000000; line-height: 1.2em;}
 .popupType2 .popupTop .popupTit .state{display: inline-block; width: 20px; height: 20px; border-radius: 50%; margin-right: 15px; vertical-align: bottom; background-color: #0090ff;}
 .popupType2 .popupCont{background-color: #ffffff; height: 100%; padding-top: 67px;}
 .popupType2 .popupCont2{background-color: #ffffff; padding: 12px; padding-bottom: 80px; height: 100%; padding-top: 67px; box-sizing: border-box;}
-.popupType2 .popupFooter{position: absolute; left: 0; bottom: 0; width: 100%; background-color: #e7ecf0; padding: 20px 0 5px;}
+.popupType2 .popupFooter{position: absolute; left: 0; bottom: 0; width: 100%; background-color: #d9e1e7; padding: 20px 0 5px;}
 .popupType2 .closeBtn{position: absolute; right: 14px; top: 20px; z-index: 2;}
 .popupType2 .closeBtn img{width: 10px;}
 .popupType2 .closeBtn .dark{display: none;}
 
-html[data-dark=true] .popupType2 .popupTop{background-color: #282828;}
+html[data-dark=true] .popupType2 .popupTop{background-color: #3c3c3c;}
 html[data-dark=true] .popupType2 .popupTop .popupTit{color: #fefefe;}
 html[data-dark=true] .popupType2 .popupCont{background-color: #000;}
 html[data-dark=true] .popupType2 .popupCont2{background-color: #000;}
-html[data-dark=true] .popupType2 .popupFooter{background-color: #282828;}
+html[data-dark=true] .popupType2 .popupFooter{background-color: #3c3c3c;}
 html[data-dark=true] .popupType2 .closeBtn .light{display: none;}
 html[data-dark=true] .popupType2 .closeBtn .dark{display: inline-block;}
 
 #divPopup2 .popupType3{position: fixed; min-width: 0px; width: 100%; /*  margin: 0 auto; left: 50%; top: 50%; transform: translate(-51.5%, -51.4%); border-radius: 12px; display: none;*/ overflow: hidden;}
-#divPopup2 .popupType3 .popupTop{background-color: #e7ecf0; padding: 20px 15px 15px;}
+#divPopup2 .popupType3 .popupTop{background-color: #d9e1e7; padding: 20px 15px 15px;}
 #divPopup2 .popupType3 .popupTop .popupTit{font-family: PretendardB, sans-serif; font-size: 15px; color: #000000; line-height: 1.2em;}
 #divPopup2 .popupType3 .popupTop .popupTit .state{display: inline-block; width: 20px; height: 20px; border-radius: 50%; margin-right: 15px; vertical-align: bottom; background-color: #0090ff;}
 #divPopup2 .popupType3 .popupCont{background-color: #ffffff; height: auto;}
@@ -222,8 +225,8 @@ html[data-dark=true] .popupType2 .closeBtn .dark{display: inline-block;}
 #divPopup2 .popupType3 .closeBtn{position: absolute; right: 14px; top: 20px;}
 #divPopup2 .popupType3 .closeBtn img{width: 10px;}
 #divPopup2 .popupType3 .closeBtn .dark{display: none;}
-#divPopup2 .popupType3 .popupBottom{background-color: #e7ecf0;}
-#divPopup2 .popupType3 .popupFooter{position: absolute; left: 0; bottom: 0; width: 100%; background-color: #e7ecf0; padding: 20px 0 5px;}
+#divPopup2 .popupType3 .popupBottom{background-color: #d9e1e7;}
+#divPopup2 .popupType3 .popupFooter{position: absolute; left: 0; bottom: 0; width: 100%; background-color: #d9e1e7; padding: 20px 0 5px;}
 html[data-dark=true] #divPopup2 .blackBg{background-color: rgba(0, 0, 0, 0.4);}
 html[data-dark=true] #divPopup2 .popupType3 .popupTop{background-color: #282828;}
 html[data-dark=true] #divPopup2 .popupType3 .popupTop .popupTit{color: #fefefe;}
@@ -238,7 +241,7 @@ html[data-dark=true] #divPopup2 .popupType3 .popupFooter{background-color: #2828
 .divPopup{position: relative; z-index: 10;}
 .divPopup .blackBg{display: none; background-color: rgba(0, 0, 0, 0.2); width: 100%; height: 100%; position: fixed; left: 0; top: 0;}
 .divPopup .popupType1{position: fixed; min-width: 0px; width: 250px;  margin: 0 auto; left: 50%; top: 50%; transform: translate(-51.5%, -51.4%); border-radius: 12px; overflow: hidden; display: none;}
-.divPopup .popupType1 .popupTop{background-color: #e7ecf0; padding: 20px 15px 15px;}
+.divPopup .popupType1 .popupTop{background-color: #d9e1e7; padding: 20px 15px 15px;}
 .divPopup .popupType1 .popupTop .popupTit{font-family: PretendardB, sans-serif; font-size: 15px; color: #000000; line-height: 1.2em;}
 .divPopup .popupType1 .popupTop .popupTit .state{display: inline-block; width: 20px; height: 20px; border-radius: 50%; margin-right: 15px; vertical-align: bottom; background-color: #0090ff;}
 .divPopup .popupType1 .popupCont{background-color: #ffffff;}
