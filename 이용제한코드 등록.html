@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--  -->
+<title>이용제한코드 관리</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+	<link rel="shortcut icon" href="images/favicon/favicon.ico">
+	<link type="text/css" rel="stylesheet" href="style/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="style/css/common.css">
+ 	<link type="text/css" rel="stylesheet" href="style/css/plugin/jquery.stickytable.css">
+    <link type="text/css" rel="stylesheet" href="style/css/content.css">
+    <link type="text/css" rel="stylesheet" href="style/css/layout.css">
+    <link type="text/css" rel="stylesheet" href="style/css/grid.css">
+    <link type="text/css" rel="stylesheet" href="style/css/plugin/jquery.mCustomScrollbar.css">
+    <link type="text/css" rel="stylesheet" href="style/css/error.css">
+	<link rel="stylesheet" href="jqgrid/css/ui.jqgrid.min.css">
+	<link rel="stylesheet" href="jquery-ui-1.13.0.base/jquery-ui.min.css">
+	<script src="js/plugin/jquery-3.6.3.min.js"></script>
+    <script src="js/plugin/jquery.dotdotdot.js"></script>
+    <script src="js/plugin/jquery.mCustomScrollbar.min.js"></script>
+    <script src="js/plugin/jquery-ui-1.13.0.custom/jquery-ui-1.13.0.custom/jquery-ui.min.js"></script>
+    <script src="js/plugin/jquery.stickytable.js"></script>
+    <script src="js/plugin/datepicker-ko.js"></script>
+    <script src="js/plugin/jquery.preloaders.min.js"></script>
+    <script src="js/jquery.serializeObject.min.js"></script>
+    <script src="jqgrid/i18n/grid.locale-kr.js"></script>
+    <script src="jqgrid/jquery.jqgrid.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+	<div class="popupType2" style="display: block;">
+		<div class="popupTop">
+			<h3 class="popupTit">이용제한코드 등록</h3>
+		</div>
+		<div class="popupCont2 Scroll1">
+			<div class="borderBox2">
+				<form id="createCommand" name="createCommand" class="createCommand" action="/libmng/libLimit/createForm.do" method="post" onsubmit="return false;"><table class="tableType3">
+						<tr id = 'firstRow'>
+							<th style="min-width:50px">도서관명</th>
+							<td colspan="2">
+								<input id="libNm" name="libNm" title="도서관명" type="text" class="inputtextType1 wdp100 disabled" readonly="readonly" value=""/><input id="libNo" name="libNo" type="hidden" value=""/></td>
+							<td >
+								<ul class="btnList1">
+					                <li><a id="btnSearchLib"  name="btnSearchLib" class="btnType1" style="color: white;" href="#" title="검색">검색</a>
+					                <input type = "checkbox" id = "allLibraryYN"><label for="allLibraryYN">전체</label></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>유형</th>
+							<td colspan="2">
+								<select name="mapType" id="mapType"
+									class="selectType3 wdp100" title="대상필드 검색항목">
+										<option value="0100">별치기호</option>
+												<option value="0200">자료실</option>
+												<option value="0300">등록번호유형</option>
+												</select>
+							</td>								
+							<td colspan="2">
+								<ul class="btnList1">
+					                <li><a id="btnCopy" style="color: white;" name="btnCopy" class="btnType1" href="#" title="타도서관 참조">타도서관 참조</a>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>코드</th>
+							<td>
+								<select class="js-example-basic-multiple" id = "codeKey" name="codeKey[]" multiple="multiple"></select>
+							</td>
+							<td colspan="4">
+								<ul class="btnList1">
+					                <li><a id="btnClear" style="color: white;" name="btnClear" class="btnType1" href="#" title="초기화">초기화</a>
+								</ul>
+							</td>
+						</tr>
+					</table>		
+					
+				<div>
+<input type="hidden" name="_csrf" value="2c254d7d-2d85-46b9-adef-e1b502ab4a4f" />
+</div></form></div>			
+			<div class="mgb50">
+				<form id="searchCommand" name="searchCommand" action="/libmng/libLimit/createForm.do" method="post" onsubmit="return false;"><input type="hidden" name = "searchValue2" id="libId" value=""/>
+					<ul class="columnList2">
+						<li class="wd150">
+							<select name="searchType" id="searchType" class="selectType3 wdp100" title="검색항목">
+									<option value="">전체</option>
+									<option value="0100">코드</option>
+									<option value="0200">코드명</option>
+							</select>
+						</li>
+						<li>
+							<input id="searchValue" name="searchValue" title="검색어" type="text" class="inputtextType2" value=""/></li>
+						<li class="wdAuto">
+							<ul style = "display: flex;"> 
+								<li><input id="btnSearch" style="color: white;" class="btnType1 wd30 mgl10" value="검색" title="검색버튼"></li>
+								<li><input id="btnSelect" style="color: white;" class="btnType1 wd30 mgl10" value="선택" title="선택버튼"></li>
+							</ul> 
+						</li>
+					</ul>
+				<div>
+<input type="hidden" name="_csrf" value="2c254d7d-2d85-46b9-adef-e1b502ab4a4f" />
+</div></form><div class="tableW ">
+					<!-- Grid -->
+					<table id="grid"></table>
+					<div id="pager"></div>
+					<!-- //Grid -->
+				</div>
+			</div>
+ 		</div>
+		<div class="popupFooter">
+			<ul class="btnList2">
+                <li><a id="createBtn" class="btnType1" href="#" title="등록">등록</a></li>
+                <li><a id="cancelBtn"class="btnType1" href="#" title="닫기">닫기</a></li>
+            </ul>   
+         </div>
+	</div> 
+	</body>
+</html>
